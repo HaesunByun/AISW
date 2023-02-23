@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Python
+    chapters:
+    - file: A_chapter0
+    - file: A_chapter1
+  - caption: Data Science
+    chapters:
+    - file: notebooks
