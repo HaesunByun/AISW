@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="next" title="3장. 제어문" href="A_chapter3.html" />
     <link rel="prev" title="1장. 기본자료형과 변수" href="A_chapter1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -162,16 +162,9 @@ const thebe_selector_output = ".output, .cell_output"
    2장. 입출력과 타입변환
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Data Science
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="A_chapter3.html">
+   3장. 제어문
   </a>
  </li>
 </ul>
@@ -534,22 +527,13 @@ ctrl + a를 누르면 현재 셀의 모든 코드를 한꺼번에 블럭설정 �
 <span class="sd">멀티라인 스트링 기호를 써서 </span>
 <span class="sd">여러 줄을 주석으로 처리할 수도 있다. </span>
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Welcome, &#39;</span> <span class="o">+</span> <span class="n">myName</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Welcome&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-&lt;ipython-input-2-769c51f8333d&gt; in &lt;module&gt;
-      6 여러 줄을 주석으로 처리할 수도 있다.
-      7 &#39;&#39;&#39;
-----&gt; 8 print (&#39;Welcome, &#39; + myName + &#39;.&#39; )
-
-NameError: name &#39;myName&#39; is not defined
+Welcome
 </pre></div>
 </div>
 </div>
@@ -574,6 +558,17 @@ NameError: name &#39;myName&#39; is not defined
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+hello
+13
+hello! sunny
+hello! sunny
+sunny
+hello! sunny
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>그런데, 아래의 코드는 print() 함수를 쓰지 않아도 결과가 나왔을 것이다. 이는 단지 코랩에서 제공해주는 기능으로 실행시키는 셀의 가장 마지막 라인을 결과로 되돌려주기 때문이다.</p></li>
@@ -581,6 +576,11 @@ NameError: name &#39;myName&#39; is not defined
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello world&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello world&#39;
 </pre></div>
 </div>
 </div>
@@ -596,6 +596,13 @@ NameError: name &#39;myName&#39; is not defined
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+
+Nice to meet you
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>여러개의 결과를 나열하여 출력하려면 콤마(,)로 구분한다. 콤마는 문자열과 숫자를 동시에 출력할 때 매우 유용하다. 콤마를 사용하면 기본으로 한칸 띄어쓰기(공백)가 된다.</p></li>
@@ -603,6 +610,11 @@ NameError: name &#39;myName&#39; is not defined
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;내 나이는&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;살이야&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>내 나이는 20 살이야
 </pre></div>
 </div>
 </div>
@@ -614,6 +626,11 @@ NameError: name &#39;myName&#39; is not defined
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10년 후의 나이는 30 살이야
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>한칸 띄어쓰기를 없애고 싶거나 다른 구분자를 넣고 싶다면, 옵션 sep을 변경하면 된다.</p></li>
@@ -622,6 +639,12 @@ NameError: name &#39;myName&#39; is not defined
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;내 나이는&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;살이야&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">2323</span><span class="p">,</span><span class="mi">18549</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>내 나이는20살이야
+2323-18549
 </pre></div>
 </div>
 </div>
@@ -637,6 +660,11 @@ NameError: name &#39;myName&#39; is not defined
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>민지는 20살이야
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>print() 함수는 줄바꿈(\n) 기능이 포함되어 있다. 줄바꿈 기능을 바꾸고 싶다면 옵션 end를 변경하면 된다. \t는 일정한 간격으로 분리해주는 tab 기능이다.</p></li>
@@ -648,6 +676,11 @@ NameError: name &#39;myName&#39; is not defined
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나 너 우리	나 너 우리^^
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>help()함수는 함수나 클래스의 옵션이나 사용방법에 도움을 주는 함수이다. help() 괄호안에 알고자 하는 함수명, 변수명, 클래스명을 넣어주면 된다.</p></li>
@@ -656,6 +689,24 @@ NameError: name &#39;myName&#39; is not defined
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -789,16 +840,51 @@ You are 20 years old.
 <p class="sd-card-text">😄문제 1. 다음과 같이 출력결과가 나오도록 코드를 작성해 보세요.</p>
 </div>
 <div class="sd-card-body docutils">
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>요구르트에 김치 말아먹기 vs 라면에 초콜릿 넣기: 라면에 초콜릿 넣기
 당신은 라면에 초콜릿 넣기를 산택하셨군요!
 </pre></div>
 </div>
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>요구르트에 김치 말아먹기 vs 라면에 초콜릿 넣기: 둘 다 싫어
 당신은 둘 다 싫어를 산택하셨군요!
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;이름 : &#39;</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;나이 : &#39;</span><span class="p">)</span>
+<span class="n">major</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;학부 : &#39;</span><span class="p">)</span>
+<span class="n">want</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;수업에 바라는 점 : &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">major</span><span class="p">,</span> <span class="n">age</span><span class="o">+</span><span class="s1">&#39;세&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">+</span><span class="s1">&#39;님</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">want</span><span class="p">,</span> <span class="s1">&#39;의견 감사합니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">163899</span><span class="n">a6c3b4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;이름 : &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;나이 : &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">major</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;학부 : &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">want</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;수업에 바라는 점 : &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="nn">D:\users\anaconda3\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">854</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">855</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
 </div>
 </div>
 </div>
@@ -852,6 +938,7 @@ int()는 정수로 변환해주는 함수이다.</p>
 </div>
 </div>
 <ul class="simple">
+<li><p>입력을 받은 값에 대해서 바로 형 변환을 하려면 int(input(‘체온을 입력하세요. ‘))와 같이 함수를 중첩하여 쓰면된다.</p></li>
 <li><p>아래 예제의 경우, 체온으로 정수 35를 입력했다면 정상적으로 실행된다.</p></li>
 <li><p>그러나 실수값 36.5를 입력했다면 input() 함수에 의해 실수값은 문자열 ‘36.5’가 int()함수에서 에러가 발생한다.</p></li>
 </ul>
@@ -937,10 +1024,10 @@ int()는 정수로 변환해주는 함수이다.</p>
             <p class="prev-next-title">1장. 기본자료형과 변수</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="notebooks.html" title="next page">
+    <a class='right-next' id="next-link" href="A_chapter3.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
+        <p class="prev-next-title">3장. 제어문</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

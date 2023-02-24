@@ -17,23 +17,30 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# This program says hello and asks for my name.
-print('Hello world!')
-'''
-print('Input your name. ')
-멀티라인 스트링 기호를 써서 
-여러 줄을 주석으로 처리할 수도 있다. 
-'''
-print ('Welcome, ' + myName + '.' )
+name = input('이름 : ')
+age = input('나이 : ')
+major = input('학부 : ')
+want = input('수업에 바라는 점 : ')
+
+print(major, age+'세', name+'님\n'+want, '의견 감사합니다.')
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-[1;32m<ipython-input-2-769c51f8333d>[0m in [0;36m<module>[1;34m[0m
-[0;32m      6[0m [0m여러[0m [0m줄을[0m [0m주석으로[0m [0m처리할[0m [0m수도[0m [0m있다[0m[1;33m.[0m[1;33m[0m[1;33m[0m[0m
-[0;32m      7[0m '''
-[1;32m----> 8[1;33m [0mprint[0m [1;33m([0m[1;34m'Welcome, '[0m [1;33m+[0m [0mmyName[0m [1;33m+[0m [1;34m'.'[0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m
-[1;31mNameError[0m: name 'myName' is not defined
-NameError: name 'myName' is not defined
+[1;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[1;32m<ipython-input-12-163899a6c3b4>[0m in [0;36m<module>[1;34m[0m
+[1;32m----> 1[1;33m [0mname[0m [1;33m=[0m [0minput[0m[1;33m([0m[1;34m'이름 : '[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      2[0m [0mage[0m [1;33m=[0m [0minput[0m[1;33m([0m[1;34m'나이 : '[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      3[0m [0mmajor[0m [1;33m=[0m [0minput[0m[1;33m([0m[1;34m'학부 : '[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      4[0m [0mwant[0m [1;33m=[0m [0minput[0m[1;33m([0m[1;34m'수업에 바라는 점 : '[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      5[0m [1;33m[0m[0m
+
+[1;32mD:\users\anaconda3\lib\site-packages\ipykernel\kernelbase.py[0m in [0;36mraw_input[1;34m(self, prompt)[0m
+[0;32m    853[0m         [1;32mif[0m [1;32mnot[0m [0mself[0m[1;33m.[0m[0m_allow_stdin[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    854[0m             raise StdinNotImplementedError(
+[1;32m--> 855[1;33m                 [1;34m"raw_input was called, but this frontend does not support input requests."[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    856[0m             )
+[0;32m    857[0m         return self._input_request(str(prompt),
+
+[1;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 
