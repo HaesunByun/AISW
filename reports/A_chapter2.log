@@ -17,14 +17,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print( 'hello!' + 5 )
+# This program says hello and asks for my name.
+print('Hello world!')
+'''
+print('Input your name. ')
+멀티라인 스트링 기호를 써서 
+여러 줄을 주석으로 처리할 수도 있다. 
+'''
+print ('Welcome, ' + myName + '.' )
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mTypeError[0m                                 Traceback (most recent call last)
-[1;32m<ipython-input-23-93de7e1a22b7>[0m in [0;36m<module>[1;34m[0m
-[1;32m----> 1[1;33m [0mprint[0m[1;33m([0m [1;34m'hello!'[0m [1;33m+[0m [1;36m5[0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+[1;32m<ipython-input-2-769c51f8333d>[0m in [0;36m<module>[1;34m[0m
+[0;32m      6[0m [0m여러[0m [0m줄을[0m [0m주석으로[0m [0m처리할[0m [0m수도[0m [0m있다[0m[1;33m.[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      7[0m '''
+[1;32m----> 8[1;33m [0mprint[0m [1;33m([0m[1;34m'Welcome, '[0m [1;33m+[0m [0mmyName[0m [1;33m+[0m [1;34m'.'[0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
 [0m
-[1;31mTypeError[0m: can only concatenate str (not "int") to str
-TypeError: can only concatenate str (not "int") to str
+[1;31mNameError[0m: name 'myName' is not defined
+NameError: name 'myName' is not defined
 

@@ -88,7 +88,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="1장. 프로그래밍 언어와 파이썬" href="A_chapter0.html" />
+    <link rel="prev" title="0장. 프로그래밍 언어와 파이썬" href="A_chapter0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    소개
                 </a>
             </li>
         </ul>
@@ -151,7 +151,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter0.html">
-   1장. 프로그래밍 언어와 파이썬
+   0장. 프로그래밍 언어와 파이썬
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -390,28 +390,11 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   [연습문제]
+   실습문제
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     문제 1. 수식으로 표현해보기
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     문제2. 변수활용하여 수식으로 표현해보기
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     문제3. 문자열 표현해보기
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id9">
    마무리
   </a>
  </li>
@@ -492,28 +475,11 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   [연습문제]
+   실습문제
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     문제 1. 수식으로 표현해보기
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     문제2. 변수활용하여 수식으로 표현해보기
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     문제3. 문자열 표현해보기
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id9">
    마무리
   </a>
  </li>
@@ -529,24 +495,9 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>1장. 기본자료형과 변수<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>이 장에서는 기본 자료형(정수형, 실수형, 문자열)과  변수, 그리고 산술연산자를 이용하여 수식을 표현하는 방법을 알아본다.</p>
 <div class="info admonition">
-<p class="admonition-title">학습목표와 기대효과 </p>
-<ul class="simple">
-<li><p>학습목표</p>
-<ul>
-<li><p>기본자료형을 알아보자.</p></li>
-<li><p>산술연산자를 이용하여 수식을 표현해보자.</p></li>
-<li><p>숫자, 문자 데이터를 변수에 저장해보자.</p></li>
-</ul>
-</li>
-<li><p>기대효과</p>
-<ul>
-<li><p>파이썬으로 산술연산을 위한 표현식을 작성할 수 있다.</p></li>
-<li><p>정수, 실수, 문자열 자료 저장을 위한 변수의 개념을 이해할 수 있다.</p></li>
-</ul>
-</li>
-</ul>
+<p class="admonition-title">학습목표</p>
+<p>이 장에서는 기본 자료형(정수형, 실수형, 문자열)과  변수, 그리고 산술연산자를 이용하여 수식을 표현하는 방법을 알아본다.</p>
 </div>
 <div class="section" id="id2">
 <h2>기본 자료형<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
@@ -651,8 +602,6 @@ title="Print to PDF"
 <li><p><strong>Shift + Enter</strong> : 코드셀 실행 후 커서가 다음 셀로 넘어간다. 다음 셀이 없을 경우, 새로운 셀이 만들어진다.</p></li>
 </ul>
 <p>연산자가 손에 익히도록 아래의 수식을 코드로 작성해보자.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header bg-light docutils">
@@ -674,15 +623,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header bg-light docutils">
 <p class="sd-card-text">😄문제3. 수식 표현해보기</p>
 </div>
 <div class="sd-card-body docutils">
 <p class="sd-card-text">다음 수식을 코드로 표현해보세요.</p>
 <p class="sd-card-text"><span class="math notranslate nohighlight">\( 5^2*10÷4 \)</span></p>
-</div>
-<a class="sd-stretched-link reference external" href="#"></a></div>
 </div>
 </div>
 </div>
@@ -1014,6 +961,9 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
+<ul class="simple">
+<li><p>공백(‘ ‘)도 문자열이며, 문자열과 덧셈 연산이 가능하다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬은&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="s1">&#39;즐거워! &#39;</span><span class="p">)</span>
@@ -1050,6 +1000,23 @@ title="Print to PDF"
 </div>
 <p>결론은 데이터 타입이 달라 덧셈연산을 할수가 없어 에러가 나온다.</p>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;hello!&#39;</span> <span class="o">+</span> <span class="mi">5</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">93</span><span class="n">de7e1a22b7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">print</span><span class="p">(</span> <span class="s1">&#39;hello!&#39;</span> <span class="o">+</span> <span class="mi">5</span> <span class="p">)</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="variable">
@@ -1062,11 +1029,6 @@ title="Print to PDF"
 <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
 <span class="n">S</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;원의 넓이(S)&#39;</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>원의 넓이(S) 314.0
 </pre></div>
 </div>
 </div>
@@ -1110,11 +1072,14 @@ myvar2 = "Byun"
 my-var = "Byun" #_이외의 특수문자가 들어갈 수 없다.
 my var = "Byun" # 공백이 들어갈 수 없다.
 if = "Byun" #예약어는 사용할 수 없다.
-</code></pre><p>아직 함수에 대해 배우지 않았지만 사용자의 편의를 위해 파이썬에는 이미 만들어져 내장되어 있는 <strong>내장함수</strong>가 많다. 예를들어, print(), input(), sum(), max(), min() …등이 이에 속한다.</p>
+</code></pre><div class="warning admonition">
+<p class="admonition-title">변수명으로 사용하면 안되는 것들</p>
+<p>아직 함수에 대해 배우지 않았지만 사용자의 편의를 위해 파이썬에는 이미 만들어져 내장되어 있는 <strong>내장함수</strong>가 많다. 예를들어, print(), input(), sum(), max(), min() …등이 이에 속한다.</p>
 <p>클래스 또한 이 강좌에서 다루지는 않지만 파이썬에 이미 만들어져 있는 <strong>클래스</strong>가 많다. 예를 들어, list(), dict(), set(), int(), str(), …등이 이에 속한다.</p>
 <p>이러한 내장함수명이나 클래스명을 변수명으로 사용하지 말자.
 내장함수명이나 클래스명을 변수명으로 사용하면 기존에 정의되어 있는 내장함수나 클래스의 기능이 정상적으로 동작하지 않아 에러를 만나게 될 것이다.</p>
 <p>예를들어, input = 100, print=’안녕하세요’와 같이 코드를 작성하지 않도록 하자.</p>
+</div>
 <div class="warning admonition">
 <p class="admonition-title">내장함수명, 클래스명을 변수명 만들어 실행시켰다면!</p>
 <p>내장함수명, 클래스명을 변수명 만들어 실행시켰다면 당황하지 말고, 해당 코드는 삭제하고 메뉴 런타임 &gt;&gt; 런타임 다시시작을 눌러 초기화 시켜주면 된다.</p>
@@ -1145,11 +1110,6 @@ if = "Byun" #예약어는 사용할 수 없다.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 hi!
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>변수 num에 정수 100을 저장한다.</p></li>
@@ -1173,11 +1133,6 @@ if = "Byun" #예약어는 사용할 수 없다.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi! sun
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>변수 name에 ‘sun’을 저장한다.</p></li>
@@ -1187,11 +1142,6 @@ if = "Byun" #예약어는 사용할 수 없다.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
 </pre></div>
 </div>
 </div>
@@ -1212,11 +1162,6 @@ if = "Byun" #예약어는 사용할 수 없다.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>young
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>변수 name에 문자열 ‘young’을 저장한다.</p></li>
@@ -1231,11 +1176,6 @@ if = "Byun" #예약어는 사용할 수 없다.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>변수 spam에 100을 저장한다.</p></li>
@@ -1247,11 +1187,6 @@ if = "Byun" #예약어는 사용할 수 없다.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">spam</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1215,7 @@ if = "Byun" #예약어는 사용할 수 없다.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="n">ba8dae9bd2c7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ba8dae9bd2c7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">eggs</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fizz</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">spam</span> <span class="o">=</span> <span class="n">fizz</span> <span class="o">+</span> <span class="n">eggz</span>
@@ -1311,25 +1246,10 @@ if = "Byun" #예약어는 사용할 수 없다.
 </div>
 </div>
 <div class="section" id="id8">
-<h2>[연습문제]<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<h2>실습문제<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+</div>
 <div class="section" id="id9">
-<h3>문제 1. 수식으로 표현해보기<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<p>다음 수식을 코드로 표현해보고 결과를 출력하시오.
-<span class="math notranslate nohighlight">\( 5^2*10÷4 \)</span></p>
-</div>
-<div class="section" id="id10">
-<h3>문제2. 변수활용하여 수식으로 표현해보기<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<p>x는 3이다. 변수 x를 활용하여 수식을 작성해보고 y를 출력하시오.</p>
-<p><span class="math notranslate nohighlight">\( y=[\{(𝑥^2−2𝑥)−6\}×2]+(3𝑥−3)÷2 \)</span></p>
-</div>
-<div class="section" id="id11">
-<h3>문제3. 문자열 표현해보기<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
-<p>변수 name에 ‘지수’를 넣고 변수를 활용하여 3번 연속으로 ‘지수야 반가워’를 출력하시오.</p>
-<p>Output: ‘지수야 반가워 지수야 반가워 지수야 반가워’</p>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>마무리<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<h2>마무리<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>지금까지 우리는 정수형, 실수형, 문자열 데이터 타입과 이들 데이터 타입에서 사용할 수 있는 주요 연산자를 학습했다.
 또한 변수의 개념과 변수를 활용하는 연습을 해보았다.</p>
 <p>정리하자면,</p>
@@ -1373,7 +1293,7 @@ if = "Byun" #예약어는 사용할 수 없다.
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">1장. 프로그래밍 언어와 파이썬</p>
+            <p class="prev-next-title">0장. 프로그래밍 언어와 파이썬</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="notebooks.html" title="next page">
