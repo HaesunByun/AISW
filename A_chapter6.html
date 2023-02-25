@@ -344,7 +344,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   함수 정의와 호출
+   함수의 종류
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   함수 정의
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   함수 호출
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   전달인자와 매개변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -353,14 +368,21 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#arguments">
-   Arguments
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variable-scope">
    변수의 유효 범위( Variable scope)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#global-variable">
+     전역변수(Global variable )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-variable">
+     지역변수(local variable)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -383,7 +405,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   함수 정의와 호출
+   함수의 종류
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   함수 정의
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   함수 호출
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   전달인자와 매개변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -392,14 +429,21 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#arguments">
-   Arguments
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variable-scope">
    변수의 유효 범위( Variable scope)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#global-variable">
+     전역변수(Global variable )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-variable">
+     지역변수(local variable)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -413,40 +457,135 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>6장. 함수<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p>프로그램에서 자주 사용되는 코드를 만들어 두고 필요할 때마다 호출해서 사용하는 기능(기능 분리, 재사용)</p></li>
-<li><p>함수의 필요성</p></li>
-</ul>
+<div class="info admonition">
+<p class="admonition-title">학습목표</p>
+<p>이 장에서는 함수를 정의하는 방법과 호출하는 방법, 함수 전달인자, 매개변수, 반환(return)에 대해 알아본다. 또한 지역변수와 전역변수의 개념을 이해하고 활용해 본다.</p>
+</div>
+<p>함수는 프로그램에서 자주 사용되는 코드를 만들어 두고 필요할 때마다 호출해서 사용하는 기능으로 코드를 구조화 체계화 하기 위해서도 사용된다.</p>
+<p>함수를 정의하여 사용하면 다음과 장점을 가질 수 있다.</p>
 <ul class="simple">
 <li><p>코드의 간결성 :코드가 중복되지 않고 간결해진다.</p></li>
 <li><p>코드의 재사용성:한 번 작성해둔 코드를 여러 번 사용하므로 코드를 재사용할 수 있다.</p></li>
 <li><p>코드 수정의 용이성 : 프로그램 기능을 함수로 나누어 묶기 때문에 코드 수정이 쉽다.</p></li>
 <li><p>프로그램의 모듈화 : 기능별로 함수를 작성하므로 프로그램 모듈화가 증대된다.</p></li>
 </ul>
-<ul class="simple">
-<li><p>종류</p></li>
-<li><p>내장함수 : int(), str(), print(), input()…….</p></li>
-<li><p>사용자정의함수 : 프로그래머가 필요에 의해서 만든 함수</p></li>
-</ul>
 <div class="section" id="id2">
-<h2>함수 정의와 호출<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수명</span><span class="p">(</span><span class="n">매개변수</span><span class="p">):</span>
-    <span class="n">statements</span>
+<h2>함수의 종류<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>함수는 크게 <strong>내장 함수</strong>와 <strong>사용자 정의 함수</strong>로 나뉜다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">내장함수</span></code>는  프로그래밍에서 자주 사용하는 기능을 미리 만들어놓은 함수이며, 이미 여러분들이 사용해 본 적이 있는 int(), str(), print(), input(), … 등이 이에 속한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">사용자</span> <span class="pre">정의</span> <span class="pre">함수</span></code>는 프로그래머가 필요에 의해서 만든 함수이며 오늘 여러분들이 정의하고 호출할 함수들을 의미한다.</p>
+</div>
+<div class="section" id="id3">
+<h2>함수 정의<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>파이썬에서는 함수를 정의하기 위해 <code class="docutils literal notranslate"><span class="pre">def</span></code>라는 키워드를 사용한다. 형식은 아래와 같다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수명</span><span class="p">(</span><span class="n">매개변수1</span><span class="p">,</span> <span class="n">매개변수2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">매개변수n</span><span class="p">):</span>
+    <span class="n">실행문장1</span>
+    <span class="n">실행문장2</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">리턴값</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>함수명 짓는 규칙은 변수명 짓는 규칙과 똑같다.</p></li>
+<li><p>매개변수는 함수 안과 함수 밖을 매개체 역할을 해준다고 해서 매개변수이며, 함수 밖으로부터 함수안으로 전달되는 데이터를 받는 변수이다. 이때 전달받아야 할 데이터가 없다면 생략할 수 있다.</p></li>
+<li><p>def 함수명() 괄호 뒤에는 반드시 콜론(:)을 써야 한다.</p></li>
+<li><p>함수안에서 실행되는 문장도 반드시 들여쓰기를 해야한다.</p></li>
+<li><p>return은 함수 밖으로 값을 반환할 때 사용하는 키워드이다. 함수 밖으로 반환해야 할 값이 없다면 return은 생략할 수 있다.</p></li>
+</ul>
+<ul class="simple">
+<li><p>간단한 예로, hello() 함수를 정의해보자.</p></li>
+<li><p>hello() 함수는 ‘안녕하세요. 반갑습니다.’를 출력하는 함수이다.</p></li>
+<li><p>함수를 실행하려면 반드시 함수가 먼저 정의 되어있어야 한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;안녕하세요. 반갑습니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dragon_treasure</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gives you my treasure!&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">                          __/&gt;^^^;:,&#39;</span>
+<span class="s1">          .    </span><span class="se">\&#39;</span><span class="s1">    ,      /-.       :,/|/|&#39;</span>
+<span class="s1">          _______     __/ ^         :,/ \__&#39;</span>
+<span class="s1">      _ ./_|___|_\. _(~             ;/ /  /&#39;</span>
+<span class="s1">          \ \   / /    `-</span><span class="se">\&#39;</span><span class="s1">--._       / / ,&lt;  ___&#39;</span>
+<span class="s1">          \ </span><span class="se">\&#39;</span><span class="s1"> </span><span class="se">\&#39;</span><span class="s1"> /   ,__.   /=\     /  _/  &gt;|_</span><span class="se">\&#39;</span><span class="s1">.&#39;</span>
+<span class="s1">              \ &quot; /     `_ `--------</span><span class="se">\&#39;</span><span class="s1">    __ / </span><span class="se">\&#39;</span><span class="s1">,\ </span><span class="se">\\</span><span class="s1">&#39;</span>
+<span class="s1">              \./   ,_// ,---_____,   ,_  \_  ,| |&#39;</span>
+<span class="s1">              V     `--</span><span class="se">\&#39;</span><span class="s1"> |=|           \._/ ,/  |&#39;</span>
+<span class="s1">                          \=\            `,,/   |&#39;</span>
+<span class="s1">                          \=\            ||    /&#39;</span>
+<span class="s1">                              \=\____       |\    </span><span class="se">\\</span><span class="s1">&#39;</span>
+<span class="s1">                              / \/    `     &lt;__)    </span><span class="se">\\</span><span class="s1">&#39;</span>
+<span class="s1">                              | |                    |&#39;</span>
+<span class="s1">                          ,__\,\                   /&#39;</span>
+<span class="s1">                          ,--____&gt;    /\.         ./&#39;</span>
+<span class="s1">                          </span><span class="se">\&#39;</span><span class="s1">-__________&gt;  \.______/&#39;</span>
+<span class="s1">      &#39;&#39;&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>함수 호출<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>정의한 함수를 실행하려면 함수를 호출해야 한다. <code class="docutils literal notranslate"><span class="pre">함수를</span> <span class="pre">호출</span> <span class="pre">한다</span></code>는 의미는 함수(정의파트)에게 값을 전달하면서 정의파트에 있는 본문 실행 문장을 실행시킨다는 것이다. 이때 전달할 값을 <code class="docutils literal notranslate"><span class="pre">전달인자</span></code>라고 하는데, 전달할 값이 없다면 전달인자는 생략할 수 있다.</p>
+<p>또한 함수(정의파트)안의 본문 실행 문장들이 끝까지 다 실행되면 return이 없어도 함수를 빠져나오는데 이때 되돌아오는 위치는 함수를 호출한 코드로 돌아간다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">함수명</span><span class="p">(</span><span class="n">전달인자1</span><span class="p">,</span> <span class="n">전달인자2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">전달인자n</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;안녕하세요. 반갑습니다.&quot;를 출력하는 hello()함수 정의하고 호출해보기</span>
-<span class="c1"># 함수정의(def)가 먼저 이루져야 함. 그 후에 호출</span>
-<span class="k">def</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-1-c874af828762&gt;&quot;</span><span class="gt">, line </span><span class="mi">3</span>
-    <span class="k">def</span>
-        <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>안녕하세요. 반갑습니다.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>전달인자와 매개변수<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>전달인자는 파라미터, 인수라고도 불린다.
+아래에서 hello2 함수를 호출하면 문자열 ‘홍길동’이 name에게 전달된다. 즉 name=’홍길동’과 같은 의미이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello2</span><span class="p">(</span><span class="n">name</span><span class="p">):</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1">님 안녕하세요. 반갑습니다.&#39;</span><span class="p">)</span>
+
+<span class="n">hello2</span><span class="p">(</span><span class="s1">&#39;홍길동&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>홍길동님 안녕하세요. 반갑습니다.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>전달인자가 2개라면 매개변수에 차례대로 저장된다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{a}</span><span class="s1">+</span><span class="si">{b}</span><span class="s1">의 값은 {a+b}입니다.&#39;</span><span class="p">)</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10+20의 값은 30입니다.
 </pre></div>
 </div>
 </div>
@@ -454,66 +593,102 @@ title="Print to PDF"
 </div>
 <div class="section" id="return-value">
 <h2>return value(반환값)<a class="headerlink" href="#return-value" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">return</span></code>은 크게 두 가지 역할이 있다.</p>
 <ul class="simple">
-<li><p>return의 역할:</p>
-<ul>
-<li><p>result를 호출자에게 반환</p></li>
-<li><p>함수 탈출</p></li>
-</ul>
-</li>
-<li><p>return 이후에는 어떠한 코드가 있어도 전혀 실행되지 않음</p></li>
+<li><p>함수에서 만들어진 결과를 호출자에게 반환 하는 것.</p></li>
+<li><p>함수를 탈출하는 것.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mySum()함수 정의해보기</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{a}</span><span class="s1">+</span><span class="si">{b}</span><span class="s1">은(는) {a+b}입니다.&#39;</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
 
-<span class="k">def</span> <span class="nf">mySum</span><span class="p">():</span>
+<span class="n">add</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100+200은(는) 300입니다.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>return을 만나 함수를 탈출하면 return 이후에 어떠한 코드가 있어도 전혀 실행되지 않는다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{a}</span><span class="s1">+</span><span class="si">{b}</span><span class="s1">은(는) {a+b}입니다.&#39;</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;여긴 무인도야 절대 아무도 안와&#39;</span><span class="p">)</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100+200은(는) 300입니다.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>함수로부터 반환 받은 값을 저장하려면 라인 5와 같이 변수에 저장하면 된다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;딸기와 사과값의 합은 </span><span class="si">{num}</span><span class="s1">입니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000+2000은(는) 3000입니다.
+딸기와 사과값의 합은 3000입니다.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>함수로부터 return이 없는데 함수를 호출한 코드에서 출력하려고 하면 None을 출력한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{a}</span><span class="s1">+</span><span class="si">{b}</span><span class="s1">은(는) {a+b}입니다.&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add2</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000+2000은(는) 3000입니다.
+None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mySum</span><span class="p">():</span>
   <span class="n">total</span><span class="o">=</span><span class="mi">0</span>
   <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
       <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">num</span>
-  <span class="k">return</span> <span class="n">total</span> <span class="c1">#함수안에서 나온 결과를 함수 밖에서 사용하고자 할때에는 반드시 return이 있어야 함</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">mySum</span><span class="p">())</span> <span class="c1"># return이 없을때와 있을 때 출력값 차이</span>
+  <span class="k">return</span> <span class="n">total</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">mySum</span><span class="p">())</span> 
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">mySum</span><span class="p">()</span> <span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="arguments">
-<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># 이름을 전달받아 &quot;안녕하세요. ***님. 반갑습니다.&quot;를 출력하는 hello2(name)함수 정의하고 호출해보기
-def                # 변수 name을 매개변수라고 부른다.
-
-
-hello2(&#39;홍길동&#39;) # 함수호출, 호출시 함수에게 전달하는 값을 Arguments(파라미터, 전달인자, 인수)라 부른다.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 함수 코드</span>
-<span class="k">def</span> <span class="nf">mySum2</span><span class="p">(</span><span class="n">number</span><span class="p">):</span> 
-
-
-<span class="n">mySum2</span><span class="p">(</span><span class="mi">2345</span><span class="p">)</span>   
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="s1">&#39;1부터 </span><span class="si">{i}</span><span class="s1">까지의 합은 {mySum2(i)}입니다.&#39;</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5050
 </pre></div>
 </div>
 </div>
@@ -523,14 +698,19 @@ hello2(&#39;홍길동&#39;) # 함수호출, 호출시 함수에게 전달하는 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 함수 정의</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
   <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
-
-
 <span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="c1"># c = add(128, 256)</span>
-<span class="c1"># print(c)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
-<span class="c1"># c = add( add(1,2), add(8,9) )</span>
-<span class="c1"># print(c)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">add</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+384
+20
 </pre></div>
 </div>
 </div>
@@ -538,10 +718,21 @@ hello2(&#39;홍길동&#39;) # 함수호출, 호출시 함수에게 전달하는 
 </div>
 <div class="section" id="variable-scope">
 <h2>변수의 유효 범위( Variable scope)<a class="headerlink" href="#variable-scope" title="Permalink to this headline">#</a></h2>
-<p>Global variable vs. local variable</p>
+<div class="section" id="global-variable">
+<h3>전역변수(Global variable )<a class="headerlink" href="#global-variable" title="Permalink to this headline">#</a></h3>
+<p>프로그램 전체에서 유효한 변수
+프로그램이 시작될 때 생성되며, 프로그램이 끝날 때 사라진다.</p>
+</div>
+<div class="section" id="local-variable">
+<h3>지역변수(local variable)<a class="headerlink" href="#local-variable" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>함수 정의 파트에서만 유효한 변수</p></li>
+<li><p>함수가 호출되었을 때 생성되며 함수를 벗어날 때 사라진다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#global variable</span>
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
     <span class="n">v1</span><span class="o">=</span><span class="mi">50</span> <span class="c1">#local variable</span>
 
 <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
@@ -549,6 +740,18 @@ hello2(&#39;홍길동&#39;) # 함수호출, 호출시 함수에게 전달하는 
 
 <span class="n">func1</span><span class="p">()</span>  
 <span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">aa1eeecb1fec</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">func1</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">print</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;v1&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -592,6 +795,7 @@ hello2(&#39;홍길동&#39;) # 함수호출, 호출시 함수에게 전달하는 
 4
 4
 </pre></div>
+</div>
 </div>
 </div>
 </div>
