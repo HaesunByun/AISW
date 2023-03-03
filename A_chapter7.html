@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7장. numpy &#8212; AISW</title>
+    <title>Chapter 7. numpy &#8212; AISW</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -186,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7장. numpy
+   Chapter 7. numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -493,7 +493,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>7장. numpy</h1>
+                <h1>Chapter 7. numpy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -642,8 +642,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="numpy">
-<h1>7장. numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-7-numpy">
+<h1>Chapter 7. numpy<a class="headerlink" href="#chapter-7-numpy" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>numpy는 Number와 python의 합성어이다.</p></li>
 <li><p>행렬이나 대규모 다차원 배열을 쉽고 빠르게 처리할 수 있도록 하는 파이썬 라이브러리이며, 간단한 기능부터 계산과학 분야의 복잡한 연산을 지원하기 위한 기능들까지 포함되어 있다.</p></li>
@@ -715,7 +715,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>  
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>  
 <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -728,13 +728,28 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제1. 1차원 배열 생성하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">다음과 같은 배열을 생성하시오.</p>
+<p class="sd-card-text">array([10,  8, 15,  7, 19])</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id1">
 <h2>2-D array 생성하기<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>2차원 배열은 행(Row)과 열(Column)로 구성되어 있다.</p></li>
 </ul>
-<div align="center"><img src="https://haesunbyun.github.io/Basic-Computing/_images/ch11/array.png" style="width:400px;"></div>
+<div align="center"><img src="https://haesunbyun.github.io/AISW/_images/ch11/array.png" style="width:400px;"></div>
 - 행은 가로 방향으로 줄을 세운 것이며, 열은 세로 방향으로 줄을 세운 것이다.
 - 2차원 배열은 array()에 중첩 리스트를 넣어주거나, 배열모양을 바꿔주는 reshape()을 통해서 생성할 수 있다.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">리스트</span> <span class="n">of</span> <span class="n">리스트</span><span class="p">])</span>
@@ -787,6 +802,25 @@ number of columns: 3
 </div>
 </div>
 </div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제2. 2차원 배열 생성하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">다음과 같은 배열을 생성하시오.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+ <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
+ <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id2">
 <h2>3-D array 생성하기<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
@@ -821,9 +855,38 @@ number of columns: 3
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제1. 3차원 배열 생성하기</p>
+<p class="sd-card-text">😄문제3. 3차원 배열 생성하기</p>
 </div>
 <div class="sd-card-body docutils">
+<p class="sd-card-text">다음과 같은 배열을 생성하시오.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[[</span><span class="mi">100</span>  <span class="mi">90</span>  <span class="mi">80</span><span class="p">]</span>
+  <span class="p">[</span> <span class="mi">70</span>  <span class="mi">60</span>  <span class="mi">50</span><span class="p">]]</span>
+
+ <span class="p">[[</span> <span class="mi">15</span>  <span class="mi">25</span>  <span class="mi">35</span><span class="p">]</span>
+  <span class="p">[</span> <span class="mi">45</span>  <span class="mi">55</span>  <span class="mi">65</span><span class="p">]]</span>
+
+ <span class="p">[[</span> <span class="mi">11</span>  <span class="mi">22</span>  <span class="mi">33</span><span class="p">]</span>
+  <span class="p">[</span> <span class="mi">44</span>  <span class="mi">55</span>  <span class="mi">66</span><span class="p">]]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제4. 3차원 배열 생성하기</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ar3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]],</span> 
+                <span class="p">[[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ar3</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="sd-card-text">arange()와 reshape()으로 변수 ar3와 동일한 3차원 배열을 만들어보세요.</p>
 </div>
 </div>
@@ -901,6 +964,62 @@ number of columns: 3
 [-3 -3 -3]
 [ 4 10 18]
 [0.25 0.4  0.5 ]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>행렬끼리 연산할때 크기가 다른 경우 이를 자동으로 확대해 주는 기능을 브로드캐스팅이라고 한다.</p></li>
+</ul>
+<div align="center"><img src="https://haesunbyun.github.io/AISW/_images/ch11/broadcasting.png" style="width:400px;"></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ar1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ar2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ar0</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ar1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ar2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]] 
+ [0 1 2] 
+ [[0]
+ [1]
+ [2]
+ [3]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar0</span> <span class="o">+</span> <span class="n">ar1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  2,  4],
+       [ 3,  5,  7],
+       [ 6,  8, 10],
+       [ 9, 11, 13]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar0</span> <span class="o">+</span> <span class="n">ar2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2],
+       [ 4,  5,  6],
+       [ 8,  9, 10],
+       [12, 13, 14]])
 </pre></div>
 </div>
 </div>
@@ -1068,31 +1187,27 @@ number of columns: 3
 <li><p>리스트와 배열의 연산속도</p>
 <ul>
 <li><p>리스트와 배열의 연산속도를 확인해보자.</p></li>
-<li><p>억개의 숫자에 대해서 *2를 했다.</p></li>
-<li><p>결과를 보면 배열이 10배 이상 빠르다.</p></li>
+<li><p>억개의 숫자에 대해서 2를 곱했다.</p></li>
+<li><p>결과를 보면 배열(array)가 10배 이상 빠르다.</p></li>
 <li><p>배열은 동일한 자료형만 저장하므로 데이터 저장에 필요한 저장공간이 일정하며 연속적이다. 따라서 메모리 주소 측면에서 인덱스를 통해 빠르게 데이터에 접근할 수 있다.</p></li>
 <li><p>반면, 리스트는 다양한 자료형을 저장할 수 있어서 필요한 저장공간이 일정하지 않으며, 메모리 활동공간도 연속적이지 않다. 인덱스를 갖지만 이는 몇 번째 데이터인가 정도를 의미한다.</p></li>
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span><span class="p">))</span>
 
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="p">[</span><span class="n">i</span> <span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
 <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;리스트 실행시간: {end - start}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;리스트 실행시간: {end - start}&#39;</span><span class="p">)</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
 <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;배열 실행시간: {end - start}&#39;</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;배열 실행시간: {end - start}&#39;</span><span class="p">)</span> 
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="id4">
@@ -1262,6 +1377,28 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제5. Zero 배열 생성</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고 모두 0으로 채우시오.</p>
+<p class="sd-card-text">깊이 x 행 x 렬: 3 x 3 x 3</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="ones">
@@ -1274,6 +1411,28 @@ number of columns: 3
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ar_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar_one</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제6. One 배열 생성</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고 모두 1로 채우시오.</p>
+<p class="sd-card-text">깊이 x 행 x 렬: 2 x 5 x 4</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1291,6 +1450,12 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.44528999 0.16883791 0.46080835 0.17346252 0.0141874 ]
+ [0.26382044 0.25559711 0.20547197 0.18712992 0.60903403]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1298,10 +1463,28 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3.61929226 3.77269928]
+ [3.97991763 3.62877985]
+ [3.8148326  3.69710512]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[-5 -5 -1 -2]
+  [ 2 -2  4  2]
+  [ 0  3 -2 -3]]
+
+ [[-4  3  4  1]
+  [ 4 -4  1  0]
+  [ 0  1  3 -1]]]
 </pre></div>
 </div>
 </div>
@@ -1325,10 +1508,7 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11 70]
-</pre></div>
-</div>
-<img alt="_images/A_chapter7_60_1.png" src="_images/A_chapter7_60_1.png" />
+<img alt="_images/A_chapter7_69_0.png" src="_images/A_chapter7_69_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1341,17 +1521,47 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[11 70]
- [83 77]
- [68 14]
- [39 86]
- [ 0 47]
- [88 94]
- [ 7 75]
- [ 5 77]
- [71 98]
- [83 65]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[26 27]
+ [30 14]
+ [87 44]
+ [46 10]
+ [16 42]
+ [73 49]
+ [15 98]
+ [38 42]
+ [27 73]
+ [97 51]]
 </pre></div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제7. 랜덤 배열 생성</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고, 0이상 1미만의 임의의 실수로   채우시오.</p>
+<p class="sd-card-text">깊이 x 행 x 렬: 5 x 5 x 2</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제8. 랜덤 배열 생성</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고 4.5이상 7미만의 임의의 실수로  채우시오.</p>
+<p class="sd-card-text">깊이 x 행 x 렬: 7 x 1 x 4</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1370,6 +1580,11 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  5. 10. 15.]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>linspace()로 생성한 배열을 선형 그래프의 y축의 값을 생성하는데 사용해보자.</p></li>
@@ -1384,7 +1599,7 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/A_chapter7_66_0.png" src="_images/A_chapter7_66_0.png" />
+<img alt="_images/A_chapter7_77_0.png" src="_images/A_chapter7_77_0.png" />
 </div>
 </div>
 </div>
@@ -1403,6 +1618,20 @@ number of columns: 3
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">===결과===&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 2 3 4]
+ [5 6 7 8 9]]
+
+
+===결과===
+[[0 5]
+ [1 6]
+ [2 7]
+ [3 8]
+ [4 9]]
 </pre></div>
 </div>
 </div>
@@ -1432,7 +1661,7 @@ number of columns: 3
 
 
 ===결과===
-(array([0, 2, 4, 6, 8]),)
+(array([0, 2, 4, 6, 8], dtype=int64),)
 [&#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39; &#39;짝수&#39; &#39;홀수&#39;]
 </pre></div>
 </div>
@@ -1457,6 +1686,23 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.81670201 0.33747302 0.3565004  0.92969629]
+  [0.24761632 0.73838566 0.77637742 0.29278498]]
+
+ [[0.82583502 0.40040221 0.77731843 0.22232441]
+  [0.60883844 0.35455978 0.55327031 0.02252411]]]
+
+
+===결과===
+0.022524111784988476
+
+
+===결과===
+0.9296962914397625
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="argmin-argmax">
@@ -1469,6 +1715,12 @@ number of columns: 3
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">ar</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">ar</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+3
 </pre></div>
 </div>
 </div>
@@ -1498,6 +1750,21 @@ number of columns: 3
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">===결과===&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  3  5  7  9]
+ [11 13 15 17 19]
+ [21 23 25 27 29]]
+225
+15.0
+15.0
+
+
+===결과===
+[33 39 45 51 57]
+[ 25  75 125]
 </pre></div>
 </div>
 </div>
@@ -1536,6 +1803,29 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[40.50308157 56.59169898 83.48666291 31.18902341  1.69992704 30.96412479
+ 68.80869593 66.01200847 78.35061169 85.37464014 57.83477798 10.30288754
+  3.80429575  1.60543702 87.86006636 10.8440683  37.01183139 48.03626076
+ 41.88675576 66.45915045 79.9699311  46.25315709 49.2206467  46.60687462
+ 96.55708468 27.33997016 26.53686546 59.8336466  64.66183903 52.95824952
+ 93.72701895 46.83279836 78.88315528 63.7051911  30.41977858  4.97419439
+  4.50867382 79.12533274 95.10623211 57.58109025 60.2803148  19.76858068
+ 69.92399496 89.24128684 31.28091408  2.00208031 85.36752833 44.1385089
+  7.87803766 95.67525121 20.87983097 38.59095216 52.98513177 80.79280044
+ 79.13834057  5.49428725  4.05608696 99.67862862 24.43572176 32.68606256
+ 29.8078903  47.55261012 80.71917763 37.16639453 56.57431699 76.14005288
+  3.9088271  46.57535746 90.05391768 44.24907775 25.61816122 45.2154132
+ 78.45093814 23.5209951  55.20072386 98.233169   75.98876023 12.00494104
+ 88.94739724 27.16051154]
+
+
+===결과===
+838.9279378546602
+28.964252758437603
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="unique">
@@ -1552,6 +1842,16 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-4  2  2  0 -6]
+ [ 2  0  0 -2  0]]
+
+
+===결과===
+[-6 -4 -2  0  2]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="abs">
@@ -1565,6 +1865,17 @@ number of columns: 3
 <span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">===결과===&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ar</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-4  8  1  5 -8]
+ [ 3 -4 -6 -5  6]]
+
+
+===결과===
+[[4 8 1 5 8]
+ [3 4 6 5 6]]
 </pre></div>
 </div>
 </div>
@@ -1586,6 +1897,9 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/A_chapter7_97_0.png" src="_images/A_chapter7_97_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="dot">
@@ -1593,6 +1907,9 @@ number of columns: 3
 <ul class="simple">
 <li><p>np.dot(a, b): 행렬의 곱을 구한다.</p></li>
 <li><p>a&#64;b와 같이 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 기호로 나타내기도 한다.</p></li>
+</ul>
+<ul class="simple">
+<li><p>두 행렬 A의 열의 개수와 행렬 B의 행의 개수가 같을 때 행렬 A의 제 i행의 각 원소와 행렬 B의 제 j열의 각 원소를 그 순서대로 곱하여 더한 것을 (i,j)원소로 하는 행렬을 두 행렬 A와 B의 곱이라고 한다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">===</span><span class="n">a</span><span class="o">===</span>
 <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span><span class="p">]</span>
@@ -1605,7 +1922,9 @@ number of columns: 3
  <span class="p">[</span> <span class="mi">9</span> <span class="mi">10</span><span class="p">]</span>
  <span class="p">[</span><span class="mi">11</span> <span class="mi">12</span><span class="p">]]</span>
 
-<span class="p">[[</span><span class="mi">1</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">7</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="mi">11</span><span class="p">],</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">7</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="mi">11</span><span class="p">],</span> 
  <span class="p">[</span><span class="mi">1</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="mi">12</span><span class="p">]</span>
 
  <span class="p">[</span><span class="mi">6</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">7</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="mi">7</span> <span class="o">+</span> <span class="mi">9</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="mi">11</span><span class="p">],</span>
@@ -1646,7 +1965,7 @@ number of columns: 3
 </div>
 </div>
 </div>
-</div>
+<div align="center"><img src="https://haesunbyun.github.io/AISW/_images/ch11/dot.png" style="width:400px;"></div></div>
 </div>
 <div class="section" id="id6">
 <h2>파일저장, 읽어오기<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
@@ -1654,14 +1973,10 @@ number of columns: 3
 <li><p>np.savetxt(파일명, 배열명): 배열을 텍스트 파일로 저장한다.</p></li>
 <li><p>np.loadtxt(파일명): 파일을 배열로 불러온다.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;File123.txt&#39;</span><span class="p">,</span> <span class="n">ar</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;File123.txt&#39;</span><span class="p">,</span> <span class="n">ar</span><span class="p">)</span>
 <span class="n">ar</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;File123.txt&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="deep-copy-vs-shallow-copy">
@@ -1691,6 +2006,23 @@ number of columns: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[   1    2 1000]
+ [   4    5    6]
+ [   7    8    9]] 
+
+ [[   1    2 1000]
+ [   4    5    6]
+ [   7    8    9]]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>이를 방지하기 위해서는 cp_ar = ar.copy()와 같이 Deep Copy를 해야 한다.</p></li>
@@ -1706,6 +2038,23 @@ number of columns: 3
 
 <span class="n">cp_ar</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">1000</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cp_ar</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ar</span><span class="p">)</span> <span class="c1"># 복사된 곳에서 값을 수정해도 원본에 영향없음</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[   1    2 1000]
+ [   4    5    6]
+ [   7    8    9]] 
+
+ [[1 2 3]
+ [4 5 6]
+ [7 8 9]]
 </pre></div>
 </div>
 </div>
