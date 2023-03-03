@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4장. 반복문 &#8212; AISW</title>
+    <title>Chapter 4. 반복문 &#8212; AISW</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -85,7 +85,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="3장. 조건문" href="A_chapter3.html" />
+    <link rel="next" title="Chapter 5. 리스트" href="A_chapter5.html" />
+    <link rel="prev" title="Chapter 3. 조건문" href="A_chapter3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,33 +143,53 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Python
+  PYTHON
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter0.html">
-   0장. 프로그래밍 언어와 파이썬
+   Chapter 0. 프로그래밍 언어와 파이썬
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter1.html">
-   1장. 기본자료형과 변수
+   Chapter 1. 기본자료형과 변수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter2.html">
-   2장. 입출력과 타입변환
+   Chapter 2. 입출력과 타입변환
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter3.html">
-   3장. 조건문
+   Chapter 3. 조건문
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4장. 반복문
+   Chapter 4. 반복문
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A_chapter5.html">
+   Chapter 5. 리스트
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A_chapter6.html">
+   Chapter 6. 함수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A_chapter7.html">
+   7장. numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A_chapter8.html">
+   Chapter 8. pandas
   </a>
  </li>
 </ul>
@@ -343,6 +364,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#break">
+     break
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#while-else">
      while ~ else
     </a>
@@ -350,6 +376,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#continue">
      continue
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while">
+     while 중첩문
     </a>
    </li>
   </ul>
@@ -372,7 +403,7 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id1">
    마무리
   </a>
  </li>
@@ -385,7 +416,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>4장. 반복문</h1>
+                <h1>Chapter 4. 반복문</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,6 +437,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#break">
+     break
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#while-else">
      while ~ else
     </a>
@@ -413,6 +449,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#continue">
      continue
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while">
+     while 중첩문
     </a>
    </li>
   </ul>
@@ -435,7 +476,7 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id1">
    마무리
   </a>
  </li>
@@ -449,8 +490,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>4장. 반복문<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-4">
+<h1>Chapter 4. 반복문<a class="headerlink" href="#chapter-4" title="Permalink to this headline">#</a></h1>
 <div class="info admonition">
 <p class="admonition-title">학습목표</p>
 <p>반복(iteration)문은 동일한 문장을 반복해서 실행하는 구조이다.
@@ -517,6 +558,9 @@ count=6
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="break">
+<h3>break<a class="headerlink" href="#break" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>while문의 조건 부분에 조건식이 아닌 True 또는 1 등을 넣어줄 수도 있다. 이 경우에는 <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">1:</span></code> 이므로 조건이 항상 True가 되어 무한 반복하게 된다. 따라서 반드시 반복문에서 탈출하는 break를 반복문 안 어디엔가 써줘야 한다.</p></li>
 </ul>
@@ -603,6 +647,9 @@ count=5
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="while">
+<h3>while 중첩문<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h3>
 </div>
 </div>
 <div class="section" id="for-loop">
@@ -747,8 +794,8 @@ next_statements
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>마무리<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id1">
+<h2>마무리<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>프로그래밍 제어 구조는 순차, 선택, 반복 구조가 있다.</p></li>
 <li><p>반복구조는 조건 또는 범위에 따라 실행문장을 반복한다.</p></li>
@@ -792,8 +839,15 @@ next_statements
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">3장. 조건문</p>
+            <p class="prev-next-title">Chapter 3. 조건문</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="A_chapter5.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 5. 리스트</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

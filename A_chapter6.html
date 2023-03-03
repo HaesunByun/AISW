@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6장. 함수 &#8212; AISW</title>
+    <title>Chapter 6. 함수 &#8212; AISW</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -85,7 +85,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="5장. 리스트" href="A_chapter5.html" />
+    <link rel="next" title="7장. numpy" href="A_chapter7.html" />
+    <link rel="prev" title="Chapter 5. 리스트" href="A_chapter5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -148,37 +149,47 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter0.html">
-   0장. 프로그래밍 언어와 파이썬
+   Chapter 0. 프로그래밍 언어와 파이썬
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter1.html">
-   1장. 기본자료형과 변수
+   Chapter 1. 기본자료형과 변수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter2.html">
-   2장. 입출력과 타입변환
+   Chapter 2. 입출력과 타입변환
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter3.html">
-   3장. 조건문
+   Chapter 3. 조건문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter4.html">
-   4장. 반복문
+   Chapter 4. 반복문
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter5.html">
-   5장. 리스트
+   Chapter 5. 리스트
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   6장. 함수
+   Chapter 6. 함수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A_chapter7.html">
+   7장. numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A_chapter8.html">
+   Chapter 8. pandas
   </a>
  </li>
 </ul>
@@ -343,22 +354,22 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id1">
    함수의 종류
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id2">
    함수 정의
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id3">
    함수 호출
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id4">
    전달인자와 매개변수
   </a>
  </li>
@@ -393,7 +404,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6장. 함수</h1>
+                <h1>Chapter 6. 함수</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -404,22 +415,22 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id1">
    함수의 종류
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id2">
    함수 정의
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id3">
    함수 호출
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id4">
    전달인자와 매개변수
   </a>
  </li>
@@ -455,8 +466,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>6장. 함수<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-6">
+<h1>Chapter 6. 함수<a class="headerlink" href="#chapter-6" title="Permalink to this headline">#</a></h1>
 <div class="info admonition">
 <p class="admonition-title">학습목표</p>
 <p>이 장에서는 함수를 정의하는 방법과 호출하는 방법, 함수 전달인자, 매개변수, 반환(return)에 대해 알아본다. 또한 지역변수와 전역변수의 개념을 이해하고 활용해 본다.</p>
@@ -469,14 +480,14 @@ title="Print to PDF"
 <li><p>코드 수정의 용이성 : 프로그램 기능을 함수로 나누어 묶기 때문에 코드 수정이 쉽다.</p></li>
 <li><p>프로그램의 모듈화 : 기능별로 함수를 작성하므로 프로그램 모듈화가 증대된다.</p></li>
 </ul>
-<div class="section" id="id2">
-<h2>함수의 종류<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id1">
+<h2>함수의 종류<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>함수는 크게 <strong>내장 함수</strong>와 <strong>사용자 정의 함수</strong>로 나뉜다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">내장함수</span></code>는  프로그래밍에서 자주 사용하는 기능을 미리 만들어놓은 함수이며, 이미 여러분들이 사용해 본 적이 있는 int(), str(), print(), input(), … 등이 이에 속한다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">사용자</span> <span class="pre">정의</span> <span class="pre">함수</span></code>는 프로그래머가 필요에 의해서 만든 함수이며 오늘 여러분들이 정의하고 호출할 함수들을 의미한다.</p>
 </div>
-<div class="section" id="id3">
-<h2>함수 정의<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id2">
+<h2>함수 정의<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>파이썬에서는 함수를 정의하기 위해 <code class="docutils literal notranslate"><span class="pre">def</span></code>라는 키워드를 사용한다. 형식은 아래와 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수명</span><span class="p">(</span><span class="n">매개변수1</span><span class="p">,</span> <span class="n">매개변수2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">매개변수n</span><span class="p">):</span>
     <span class="n">실행문장1</span>
@@ -533,8 +544,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>함수 호출<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id3">
+<h2>함수 호출<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>정의한 함수를 실행하려면 함수를 호출해야 한다. <code class="docutils literal notranslate"><span class="pre">함수를</span> <span class="pre">호출</span> <span class="pre">한다</span></code>는 의미는 함수(정의파트)에게 값을 전달하면서 정의파트에 있는 본문 실행 문장을 실행시킨다는 것이다. 이때 전달할 값을 <code class="docutils literal notranslate"><span class="pre">전달인자</span></code>라고 하는데, 전달할 값이 없다면 전달인자는 생략할 수 있다.</p>
 <p>또한 함수(정의파트)안의 본문 실행 문장들이 끝까지 다 실행되면 return이 없어도 함수를 빠져나오는데 이때 되돌아오는 위치는 함수를 호출한 코드로 돌아간다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">함수명</span><span class="p">(</span><span class="n">전달인자1</span><span class="p">,</span> <span class="n">전달인자2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">전달인자n</span><span class="p">)</span>
@@ -553,8 +564,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>전달인자와 매개변수<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id4">
+<h2>전달인자와 매개변수<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>전달인자는 파라미터, 인수라고도 불린다.
 아래에서 hello2 함수를 호출하면 문자열 ‘홍길동’이 name에게 전달된다. 즉 name=’홍길동’과 같은 의미이다.</p>
 <div class="cell docutils container">
@@ -833,8 +844,15 @@ None
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">5장. 리스트</p>
+            <p class="prev-next-title">Chapter 5. 리스트</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="A_chapter7.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7장. numpy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
