@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="7장. numpy" href="A_chapter7.html" />
+    <link rel="prev" title="Chapter 7. numpy" href="A_chapter7.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter7.html">
-   7장. numpy
+   Chapter 7. numpy
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -585,6 +585,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     84
+1     21
+2     87
+3    100
+4     59
+5     46
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>type() 함수로 시리즈의 타입을 확인해보자.</p></li>
@@ -592,6 +603,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.series.Series&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -603,6 +619,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6,)
 </pre></div>
 </div>
 </div>
@@ -623,6 +644,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>딕셔너리를 넣어서 시리즈를 생성할 수 있다.</p></li>
@@ -635,6 +667,17 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;철수&#39;</span><span class="p">:</span><span class="mi">84</span><span class="p">,</span> <span class="s1">&#39;영이&#39;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;길동&#39;</span><span class="p">:</span><span class="mi">87</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;순이&#39;</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span> <span class="s1">&#39;철이&#39;</span><span class="p">:</span><span class="mi">46</span><span class="p">}</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -661,10 +704,39 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
+길동    99
+철수    87
+영이    87
+철이    84
+순이    77
+미영    15
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     94
+영이     31
+길동     97
+미영    110
+순이     69
+철이     56
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -675,10 +747,32 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동    186
+미영    115
+순이    136
+영이    108
+철수    171
+철이    130
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동   -12
+미영    85
+순이   -18
+영이   -66
+철수    -3
+철이   -38
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -689,6 +783,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동    4306.5
+미영     750.0
+순이    2271.5
+영이     913.5
+철수    3654.0
+철이    1932.0
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,10 +801,32 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수    0
+영이    1
+길동    1
+미영    0
+순이    1
+철이    0
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">**</span><span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동     150702813899780423
+미영    5076944270305263616
+순이    -493116772360357717
+영이   -2071367028796559651
+철수                      0
+철이                      0
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -723,10 +850,24 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -737,10 +878,26 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수    84
+영이    21
+길동    87
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수    84
+길동    87
+순이    59
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -754,6 +911,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>end값인 ‘순이’까지 포함하여 슬라이싱한다.</p></li>
@@ -764,10 +926,27 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>영이     21
+길동     87
+미영    100
+순이     59
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;미영&#39;</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>미영    100
+순이     59
+철이     46
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -789,6 +968,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+슬기     87
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>‘길동’은 인덱스에 있으므로 수정된다.</p></li>
@@ -797,6 +988,18 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;길동&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">88</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     88
+미영    100
+순이     59
+철이     46
+슬기     87
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -811,6 +1014,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     88
+미영    100
+순이     59
+슬기     87
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="series-filtering">
@@ -822,6 +1036,14 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="n">s1</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동     88
+미영    100
+슬기     87
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -877,6 +1099,70 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>합계</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>171</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>87</td>
+      <td>108</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>99</td>
+      <td>186</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>15</td>
+      <td>115</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>77</td>
+      <td>136</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>84</td>
+      <td>130</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>데이터프레임을 print(데이타프레임명)로 출력하면 테이블 형태로 나오지 않고 텍스트로 나온다.</p></li>
@@ -884,6 +1170,17 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     국어  영어   합계
+철수   84  87  171
+영이   21  87  108
+길동   87  99  186
+미영  100  15  115
+순이   59  77  136
+철이   46  84  130
 </pre></div>
 </div>
 </div>
@@ -900,6 +1197,70 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>데이터프레임에 옵션 index와 columns에 인덱스와 칼럼명을 직접 명시해줄 수도 있다.</p></li>
@@ -914,6 +1275,70 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>딕셔너리를 pd.DataFrame()의 데이터로 넣어 줄 수도 있다.</p></li>
@@ -928,6 +1353,70 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>numpy에서 배웠던 전치행열 시키는 transpose() 또는 .T를 사용하여 행과 열을 교환할 수도 있다.</p></li>
@@ -939,6 +1428,64 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>철수</th>
+      <th>영이</th>
+      <th>길동</th>
+      <th>미영</th>
+      <th>순이</th>
+      <th>철이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>수학</td>
+      <td>84</td>
+      <td>21</td>
+      <td>87</td>
+      <td>100</td>
+      <td>59</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <td>국어</td>
+      <td>87</td>
+      <td>15</td>
+      <td>84</td>
+      <td>87</td>
+      <td>99</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>영어</td>
+      <td>78</td>
+      <td>84</td>
+      <td>76</td>
+      <td>99</td>
+      <td>59</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="id4">
@@ -961,6 +1508,11 @@ title="Print to PDF"
 <span class="c1"># d.tail()</span>
 <span class="c1"># d.info() # column name, Non-Null count, Dtype 정보를 보여준다.</span>
 <span class="c1"># d.isnull().sum()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6, 3)
 </pre></div>
 </div>
 </div>
@@ -993,6 +1545,40 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>열만 명시하려면 행을’ : ‘와 같이 쓴다.</p></li>
@@ -1003,6 +1589,63 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>행과 열을 모두 슬라이싱 범위로 줄 수 있다.</p></li>
@@ -1014,6 +1657,43 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="df-loc">
@@ -1032,6 +1712,40 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1039,6 +1753,63 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1046,6 +1817,43 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="df">
@@ -1100,6 +1908,76 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>총점 열을 추가해보자.</p></li>
@@ -1112,6 +1990,84 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+      <td>1298</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>groupby()를 통해서 그룹으로 묶어줄 수 있다.</p></li>
@@ -1123,10 +2079,30 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>총점
+False    2
+True     5
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="p">[</span><span class="s1">&#39;총점&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">200</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     True
+영이    False
+길동     True
+미영     True
+순이     True
+철이    False
+합계     True
+Name: 총점, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -1138,6 +2114,92 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>Pass/Fail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>Fail</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>Fail</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+      <td>1298</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1148,28 +2210,129 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>Pass/Fail</th>
+      <th>scholarship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+      <td>1298</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="id6">
 <h3>연습문제<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span>
-</pre></div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제1. DataFrame 수정하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">미영의 영어점수를 100점으로 수정하고 확인하시오.</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 미영의 영어점수를 100점으로 수정하고 확인하시오.</span>
-</pre></div>
 </div>
 </div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제2. DataFrame 조건 확인하기</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 영어점수가 75점 미만인 사람들을 검색하여 확인하시오.</span>
-</pre></div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">영어점수가 75점 미만인 사람들을 검색하여 확인하시오.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1177,6 +2340,20 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 영어점수가 75점 미만인 사람들의 영어점수를 10점씩 올려 수정하고, 전체 데이터프레임을 확인하시오.</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제3. DataFrame 조건으로 수정하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">영어점수가 75점 미만인 사람들의 영어점수를 10점씩 올려 수정하고, 전체 데이터프레임을 확인하시오.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1190,6 +2367,91 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>Pass/Fail</th>
+      <th>scholarship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1198,6 +2460,129 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>scholarship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제4. 인구데이터 다뤄보기</p>
+</div>
+<div class="sd-card-body docutils">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">url_1</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/HaesunByun/AISW/main/population_in_Seoul.txt&#39;</span>
+<span class="n">pop_Seoul</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url_1</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">header</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span><span class="n">thousands</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> 
+
+<span class="n">pop_Seoul</span>
+</pre></div>
+</div>
+<p>데이터프레임의 column명을 [‘구별’, ‘인구수’, ‘한국인’, ‘외국인’, ‘고령자’]로 변경하기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;구별&#39;</span><span class="p">,</span><span class="s1">&#39;인구수&#39;</span><span class="p">,</span><span class="s1">&#39;한국인&#39;</span><span class="p">,</span><span class="s1">&#39;외국인&#39;</span><span class="p">,</span><span class="s1">&#39;고령자&#39;</span><span class="p">]</span>
+<span class="n">pop_seoul</span>
+</pre></div>
+</div>
+<p>‘구별’을 인덱스로 설명하기</p>
+<p>pop_seoul.set_index(‘구별’,inplace=True)</p>
+<p>1번째 행(합계 데이터) 삭제하기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;합계&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">pop_seoul</span>
+</pre></div>
+</div>
+<p>각 구별 한국인의 비율 구하기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="p">[</span><span class="s1">&#39;한국인비율(%)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pop_seoul</span><span class="p">[</span><span class="s1">&#39;한국인&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">pop_seoul</span><span class="p">[</span><span class="s1">&#39;인구수&#39;</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">pop_seoul</span>
+</pre></div>
+</div>
+<p>각 구별 외국인의 비율 구하기</p>
+<p>각 구별 고령자의 비율 구하기</p>
+<p>인구수 최대값 구하기</p>
+<p>인구수 최소값 구하기</p>
+<p>인구수와 고령자수 간의 상관 관계 구하기</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="p">[[</span><span class="s1">&#39;인구수&#39;</span><span class="p">,</span> <span class="s1">&#39;고령자&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -1234,7 +2619,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">7장. numpy</p>
+            <p class="prev-next-title">Chapter 7. numpy</p>
         </div>
     </a>
 </div>
