@@ -184,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="A_chapter7.html">
-   7장. numpy
+   Chapter 7. numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -265,6 +265,24 @@ title="Launch on Colab"
   </span>
 <span class="headerbtn__text-container">Colab</span>
 </a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
 
       </li>
       
@@ -733,8 +751,8 @@ title="Print to PDF"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "haesunbyun/AISW",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",
