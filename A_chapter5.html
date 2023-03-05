@@ -546,10 +546,11 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-5">
 <h1>Chapter 5. 리스트<a class="headerlink" href="#chapter-5" title="Permalink to this headline">#</a></h1>
-<p>:::{admonition} 학습목표
-:class: info<br />
-파이썬은 다수의 데이터를 하나로 묶어서 처리할 수 있는 다양한 자료형을 제공한다. 그 중에 하나인 리스트를 알아보자.</p>
+<div class="info admonition">
+<p class="admonition-title">학습목표</p>
+<p>파이썬은 다수의 데이터를 하나로 묶어서 처리할 수 있는 다양한 자료형을 제공한다. 그 중에 하나인 리스트를 알아보자.</p>
 <p>이 장에서는 리스트의 개념, 리스트의 인덱싱, 슬라이싱, 리스트 연산자 등에 대해서 알아본다.</p>
+</div>
 <div class="section" id="id1">
 <h2>리스트 생성<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -757,11 +758,12 @@ banana
 </div>
 </div>
 </div>
-<p>:::{admonition} 주의<br />
-:class: caution<br />
-문자열 또한 인덱싱과 슬라이싱이 가능하다. 그러나 문자열은 인덱스를 이용하여 낱글자 수정이 불가하다.</p>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>문자열 또한 인덱싱과 슬라이싱이 가능하다. 그러나 문자열은 인덱스를 이용하여 낱글자 수정이 불가하다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -915,11 +917,14 @@ banana
 </div>
 </div>
 </div>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄 반복문을 사용하여 3개의 입력받은 아이템들을 리스트변수 item에 추가하는 코드를 작성해 보세요.
-^^^</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄 반복문을 사용하여 3개의 입력받은 아이템들을 리스트변수 item에 추가하는 코드를 작성해 보세요.</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
   <span class="c1"># TODO</span>
@@ -927,34 +932,47 @@ banana
 <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Input: 프린터
 Input: 컴퓨터
 Input: 노트북
 [&#39;프린터&#39;, &#39;컴퓨터&#39;, &#39;노트북&#39;]
 </pre></div>
 </div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Input: 바나나
 Input: 딸기
 Input: 사과
 [&#39;바나나&#39;, &#39;딸기&#39;, &#39;사과&#39;]
 </pre></div>
 </div>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄 연속 숫자 5개를 한줄에 입력받아 정수 리스트로 만들어 출력하시오.
-^^^</p>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄 연속 숫자 5개를 한줄에 입력받아 정수 리스트로 만들어 출력하시오.</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span><span class="p">:</span> <span class="mi">50</span> <span class="mi">60</span> <span class="mi">70</span> <span class="mi">80</span> <span class="mi">90</span>
 <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span><span class="p">:</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span> <span class="mi">40</span> <span class="mi">50</span>
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1062,14 +1080,16 @@ Input: 사과
 </div>
 </div>
 </div>
-<p>:::{grid-item-card}
-:link: string_format
-:link-type: doc
-:class-header: bg-light</p>
-<p>🔦String Formatting
-^^^</p>
-<p>다양한 String Formatting 방법은 여기서 확인하세요.
-:::</p>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">🔦String Formatting</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">다양한 String Formatting 방법은 여기서 확인하세요.</p>
+</div>
+<span class="sd-stretched-link"></span></div>
+</div>
 </div>
 </div>
 

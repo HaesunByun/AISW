@@ -502,9 +502,10 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-2">
 <h1>Chapter 2. 입출력과 타입변환<a class="headerlink" href="#chapter-2" title="Permalink to this headline">#</a></h1>
-<p>:::{admonition} 학습목표
-:class: info<br />
-이 장에서는 주석을 처리하는 방법과 프로그램 실행중에 데이터를 입출력 하는 방법을 알아본다.</p>
+<div class="info admonition">
+<p class="admonition-title">학습목표</p>
+<p>이 장에서는 주석을 처리하는 방법과 프로그램 실행중에 데이터를 입출력 하는 방법을 알아본다.</p>
+</div>
 <div class="section" id="sample-source-code">
 <h2>Sample Source Code<a class="headerlink" href="#sample-source-code" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program says hello and asks for my name.</span>
@@ -547,10 +548,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>:::{admonition} Tip<br />
-:class: tip</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
 <p>여러줄을 한꺼번에 주석처리 하려면 마우스로 주석처리 할 여러 줄을 블럭설정한 후(드래그) ctrl + /를 누른다. ctrl + /를 한번 더 누르면 주석이 해제된다.
 ctrl + a를 누르면 현재 셀의 모든 코드를 한꺼번에 블럭설정 할 수 있다.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This program says hello and asks for my name.</span>
@@ -791,65 +793,100 @@ How old are you? 20
 You are 20 years old.
 </pre></div>
 </div>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄Quiz 1. 입력값 100을 주었다면 출력결과는?
-^^^</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄Quiz 1. 입력값 100을 주었다면 출력결과는?</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;5&#39;</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>:::</p>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄Quiz 2. 입력값 100을 주었다면 출력결과는?
-^^^</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄Quiz 2. 입력값 100을 주었다면 출력결과는?</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;Hello&#39;</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>:::</p>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄Quiz 3. 입력값 100을 주었다면 출력결과는?
-^^^</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄Quiz 3. 입력값 100을 주었다면 출력결과는?</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="o">+</span> <span class="mi">100</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>:::</p>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄Quiz 4. 입력값 20을 주었다면 출력결과는?
-^^^</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄Quiz 4. 입력값 20을 주었다면 출력결과는?</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;How old are you?&#39;</span><span class="p">)</span>
 <span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">10</span>  
 <span class="k">print</span> <span class="p">(</span><span class="n">f</span><span class="s1">&#39;Ten years later, you will be {age} years old.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>:::</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h3>실습문제<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제 1. 다음과 같이 출력결과가 나오도록 코드를 작성해 보세요.
-^^^</p>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제 1. 다음과 같이 출력결과가 나오도록 코드를 작성해 보세요.</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>요구르트에 김치 말아먹기 vs 라면에 초콜릿 넣기: 라면에 초콜릿 넣기
 당신은 라면에 초콜릿 넣기를 선택하셨군요!
 </pre></div>
 </div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>요구르트에 김치 말아먹기 vs 라면에 초콜릿 넣기: 둘 다 싫어
 당신은 둘 다 싫어를 선택하셨군요!
 </pre></div>
 </div>
-<p>:::</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="data-type">
@@ -919,9 +956,10 @@ int()는 정수로 변환해주는 함수이다.</p>
 </div>
 </div>
 </div>
-<p>:::{admonition} 주의<br />
-:class: warning
-int()함수는 정수모양이 아닌 문자열은 변환하지 못한다. 예를 들어, ‘3.5’나 ‘forty-two’를 변환하려고 하면 에러를 발생시킨다.</p>
+<div class="warning admonition">
+<p class="admonition-title">주의</p>
+<p>int()함수는 정수모양이 아닌 문자열은 변환하지 못한다. 예를 들어, ‘3.5’나 ‘forty-two’를 변환하려고 하면 에러를 발생시킨다.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;3.5&#39;</span><span class="p">))</span>
@@ -985,32 +1023,42 @@ int()함수는 정수모양이 아닌 문자열은 변환하지 못한다. 예�
 </div>
 <div class="section" id="id2">
 <h2>종합 실습문제<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제 1. 두 개의 정수를 입력 받아 덧셈 연산을 실행한 후에, 연산 결과를 화면에 출력하는 프로그램을 작성하시오.</p>
-<p>^^^</p>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제 1. 두 개의 정수를 입력 받아 덧셈 연산을 실행한 후에, 연산 결과를 화면에 출력하는 프로그램을 작성하시오.</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>첫 번째 정수를 입력하세요: 100
 두 번째 정수를 입력하세요: 200
 
 100+200의 결과는 300입니다.
 </pre></div>
 </div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>첫 번째 정수를 입력하세요: 300
 두 번째 정수를 입력하세요: 500
 
 300+500의 결과는 800입니다.
 </pre></div>
 </div>
-<p>:::</p>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제 2. 온도변환 프로그램
-^^^</p>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제 2. 온도변환 프로그램</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>온도 변환 프로그램
 화씨 온도를 입력하세요:50
 섭씨 온도는 10.0 입니다.
@@ -1019,7 +1067,11 @@ int()함수는 정수모양이 아닌 문자열은 변환하지 못한다. 예�
 화씨 온도는 122.0 입니다.
 </pre></div>
 </div>
-<p>:::</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>두 개의 정수를 입력 받아 덧셈 연산을 실행한 후에, 연산 결과를 화면에 출력하는 프로그램을 작성하시오.</p>
 </div>
 <div class="section" id="id3">

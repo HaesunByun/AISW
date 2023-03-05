@@ -518,13 +518,15 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-3">
 <h1>Chapter 3. 조건문<a class="headerlink" href="#chapter-3" title="Permalink to this headline">#</a></h1>
-<p>:::{admonition} 학습목표
-:class: info<br />
-이 장에서는 조건문, 비교연산자, 멤버연산자, 논리연산자를 알아본다. 또한 모듈에 대해서 알아본다.</p>
-<p>:::{admonition} 프로그래밍 제어구조
-:class: info</p>
+<div class="info admonition">
+<p class="admonition-title">학습목표</p>
+<p>이 장에서는 조건문, 비교연산자, 멤버연산자, 논리연산자를 알아본다. 또한 모듈에 대해서 알아본다.</p>
+</div>
+<div class="info admonition">
+<p class="admonition-title">프로그래밍 제어구조</p>
 <p>프로그래밍의 제어구조로는 코드의 순서대로 실행하는 순차구조, 조건에 따라 실행을 분기하는 조건구조, 일정 부분을 반복하여 실행하는 반복구조가 있다.</p>
 <p>프로그램의 흐름(flow)를 파악하기 위해 차례대로 보기 쉽게 그린 그림을 플로우차트라고 한다.</p>
+</div>
 <div align="center"><img src="https://haesunbyun.github.io/AISW/_images/ch03/flow.png" style="width:600px;"></div><p>1,2장에서 우리는 프로그램의 코드를 순서대로 실행시키는 순차구조에 대해서 익혀왔다. 이번에는 특정 조건에 따라 실행을 분기시키는 조건구조에 대해서 알아보자.</p>
 <div class="section" id="sample-source-code-1">
 <h2>Sample Source Code #1<a class="headerlink" href="#sample-source-code-1" title="Permalink to this headline">#</a></h2>
@@ -589,9 +591,10 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<p>:::{admonition} 주의
-:class: warning</p>
+<div class="warning admonition">
+<p class="admonition-title">주의</p>
 <p>비교연산자에서 같은지를 비교할 때에는 ==와 같이 등호부호(equal sign)를 두 개 쓴다는 것에 주의하자.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">10</span>
@@ -652,10 +655,11 @@ True
 </div>
 </div>
 </div>
-<p>:::{admonition} 유니코드
-:class: info</p>
+<div class="info admonition">
+<p class="admonition-title">유니코드</p>
 <p>유니코드란 전 세계의 모든 문자를 컴퓨터에서 일관되게 표현하고 다룰 수 있도록 설계된 표준이다. 현재 전 세계의 모든 문자와 이모티콘까지 포함하여 1,114,112개의 코드값이 지정되었고, 이 가운데 한,중,일 한자가 97,058개로 약 87%를 차지한다.😲</p>
 <p>유니코드 값 확인은 ord() 함수를 통해 가능하다.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;서&#39;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;서&#39;</span><span class="p">))</span>
@@ -680,9 +684,10 @@ A 65
 </div>
 </div>
 </div>
-<p>:::{admonition} 숫자 모양의 문자 비교 시 주의
-:class: info</p>
+<div class="info admonition">
+<p class="admonition-title">숫자 모양의 문자 비교 시 주의</p>
 <p>가끔 입력받은 값의 형 변환을 하지 않아 숫자 모양의 문자를 숫자인줄 알고 비교하는 경우가 있다. 이러한 경우 에러가 발생하지 않고 숫자 모양의 문자 유니코드 값을 비교하니 주의하자.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="o">&lt;</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span>
@@ -797,19 +802,27 @@ False
 </div>
 </div>
 </div>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제 1. 입력받은 점수가 80점 이상이면 ‘Pass!’를 출력하는 코드를 작성하세요.
-^^^</p>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제 1. 입력받은 점수가 80점 이상이면 ‘Pass!’를 출력하는 코드를 작성하세요.</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>점수: 90
 Pass!
 </pre></div>
 </div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>점수: 70
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="if-else">
@@ -900,11 +913,14 @@ end
 </div>
 </div>
 </div>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제. 변수 number와 같은 수, 큰 수, 작은 수를 출력하고 싶었다. 무엇이 문제인지 찾아보시오.
-^^^</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제. 변수 number와 같은 수, 큰 수, 작은 수를 출력하고 싶었다. 무엇이 문제인지 찾아보시오.</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">75</span>
 <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">75</span><span class="p">:</span>
   <span class="k">print</span> <span class="p">(</span> <span class="s1">&#39;같다.&#39;</span><span class="p">)</span>
@@ -914,11 +930,19 @@ end
   <span class="k">print</span><span class="p">(</span><span class="s1">&#39;작다.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제. 눈으로 살펴보고 결과가 어떻게 나올지 예상해보세요.
-^^^</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제. 눈으로 살펴보고 결과가 어떻게 나올지 예상해보세요.</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">75</span>
 <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
     <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;A입니다. &#39;</span> <span class="p">)</span>
@@ -944,6 +968,11 @@ end
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;F입니다.&#39;</span> <span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1026,11 +1055,14 @@ end
 </div>
 <div class="section" id="sample-source-code-2">
 <h2>Sample Source Code #2<a class="headerlink" href="#sample-source-code-2" title="Permalink to this headline">#</a></h2>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄 세가지 조건으로 실행되도록 비교파트를 수정해보세요..
-^^^</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄 세가지 조건으로 실행되도록 비교파트를 수정해보세요..</p>
+</div>
+<div class="sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a guess the number game.</span>
 <span class="n">myName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Hello! What is your name?&#39;</span><span class="p">)</span>
 <span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1047,6 +1079,11 @@ end
 <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
  <span class="k">print</span> <span class="p">(</span> <span class="s1">&#39;Good job, &#39;</span> <span class="o">+</span> <span class="n">myName</span> <span class="o">+</span> <span class="s1">&#39;! You guessed my number!&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id3">
@@ -1172,12 +1209,16 @@ True
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 </div>
-<p>:::{admonition} Short Circuit Effect
-:class: warning</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Short Circuit Effect</p>
 <p><code class="docutils literal notranslate"><span class="pre">Short</span> <span class="pre">circuit</span> <span class="pre">효과는</span> <span class="pre">짧게</span> <span class="pre">짧게</span> <span class="pre">전기가</span> <span class="pre">흐른다는</span> <span class="pre">뜻</span></code>으로 프로그래밍에서는 어떤 경우에는 정상적으로 실행하고 어떤 경우에는 에러가 나오는 경우를 의미한다.
 프로그램의 크기가 크고 복잡한 경우에는 이러한 원인을 파악하기 어렵게 만들기도 한다.</p>
+</div>
 <ul class="simple">
 <li><p>1/0은 0으로 나누는 연산으로 division by zero error가 발생하는 것이 맞다.</p></li>
 </ul>
@@ -1276,7 +1317,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
 </pre></div>
 </div>
 </div>
@@ -1317,12 +1358,15 @@ True
 </div>
 <div class="section" id="sample-source-code-3">
 <h2>Sample Source Code #3<a class="headerlink" href="#sample-source-code-3" title="Permalink to this headline">#</a></h2>
-<p>:::{grid} 1
-:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄 number의 값을 랜덤수로 수정하세요.
-^^^
-TODO-1: 1부터 20 사이의 랜덤 수가 나오도록 number를 수정해보세요.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄 number의 값을 랜덤수로 수정하세요.</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">TODO-1: 1부터 20 사이의 랜덤 수가 나오도록 number를 수정해보세요.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a guess the number game.</span>
 <span class="n">myName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Hello! What is your name?&#39;</span><span class="p">)</span>
 <span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1333,6 +1377,11 @@ TODO-1: 1부터 20 사이의 랜덤 수가 나오도록 number를 수정해보�
 <span class="c1"># TODO-2: 여러분이 작성한 #2의 비교파트 코드를 아래에 넣어주세요.</span>
 
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id5">

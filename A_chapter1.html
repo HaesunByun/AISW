@@ -83,6 +83,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Chapter 2. 입출력과 타입변환" href="A_chapter2.html" />
@@ -516,9 +518,10 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-1">
 <h1>Chapter 1. 기본자료형과 변수<a class="headerlink" href="#chapter-1" title="Permalink to this headline">#</a></h1>
-<p>:::{admonition} 학습목표
-:class: info<br />
-이 장에서는 기본 자료형(정수형, 실수형, 문자열)과  변수, 그리고 산술연산자를 이용하여 수식을 표현하는 방법을 알아본다.</p>
+<div class="info admonition">
+<p class="admonition-title">학습목표</p>
+<p>이 장에서는 기본 자료형(정수형, 실수형, 문자열)과  변수, 그리고 산술연산자를 이용하여 수식을 표현하는 방법을 알아본다.</p>
+</div>
 <div class="section" id="id1">
 <h2>기본 자료형<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>파이썬은 다양한 데이터 타입(자료형, Data Type)을 지원하고 있다.<br />
@@ -535,10 +538,11 @@ title="Print to PDF"
 <li><p>불(Bool): 논리형으로, True 또는 False를 가진다.</p></li>
 <li><p>None: 값이 없음을 의미하며, ‘아무것도 반환하지 않은’ 함수의 반환 값이다.</p></li>
 </ul>
-<p>:::{admonition} Tip<br />
-:class: tip<br />
-다른 프로그래밍 언어에서는 실수형에 float과 double형이 존재하지만 파이썬에서는 double형은 따로 존재하지 않는다.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>다른 프로그래밍 언어에서는 실수형에 float과 double형이 존재하지만 파이썬에서는 double형은 따로 존재하지 않는다.</p>
 <p>또한 문자(char) 와 문자열(string)을 따로 분류하고 있지만, 파이썬에서는 문자 길이에 상관 없이 문자열로 다루고 있다.</p>
+</div>
 <div class="section" id="id2">
 <h3>정수형 데이터<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p><strong>정수형 데이터</strong>는 0을 포함한 자연수이다. 예를들어, …, -100, -10, 0, 1, 10, 100, … 등이 정수형 데이터이다.</p>
@@ -596,11 +600,12 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<p>:::{admonition} 참고<br />
-:class: warning
-정수값으로 연산을 하면 그 결과는 정수형으로 나오고, 실수값으로 연산을 하면 그 결과는 실수형으로 나온다.</p>
+<div class="warning admonition">
+<p class="admonition-title">참고</p>
+<p>정수값으로 연산을 하면 그 결과는 정수형으로 나오고, 실수값으로 연산을 하면 그 결과는 실수형으로 나온다.</p>
 <p>그러나 나눗셈(Division) 연산의 경우의 정수값, 실수값 관계없이 항상 그 결과는 실수형으로 나온다.</p>
 <p>또한, 제곱연산자의 경우 ^로 표기하지 않도록 주의하자.</p>
+</div>
 <p>코드셀에 간단한 수식을 작성해보자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -620,28 +625,41 @@ title="Print to PDF"
 <li><p><strong>Shift + Enter</strong> : 코드셀 실행 후 커서가 다음 셀로 넘어간다. 다음 셀이 없을 경우, 새로운 셀이 만들어진다.</p></li>
 </ul>
 <p>연산자가 손에 익히도록 아래의 수식을 코드로 작성해보자.</p>
-<p>:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제1. 몫 구하기
-^^^
-50 나누기 4의 몫을 구하시오.
-:::</p>
-<p>:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제2. 나머지 구하기
-^^^
-50 나누기 4의 나머지를 구하시오.
-:::</p>
-<p>:::{grid-item-card}
-:class-header: bg-light</p>
-<p>😄문제3. 수식 표현해보기
-^^^
-다음 수식을 코드로 표현해보세요.</p>
-<p>$ 5^2*10÷4 $
-:::</p>
-<p>:::{admonition} 참고<br />
-:class: info</p>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제1. 몫 구하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">50 나누기 4의 몫을 구하시오.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제2. 나머지 구하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">50 나누기 4의 나머지를 구하시오.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제3. 수식 표현해보기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">다음 수식을 코드로 표현해보세요.</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\( 5^2*10÷4 \)</span></p>
+</div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
 <p>python에서는 정수데이타를 표현할 수 있는 범위의 한계는 없다. 즉, 엄청 큰 자리수까지 버림없이 표현이 가능하다.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">123456789012345678901234567890</span> <span class="o">*</span> <span class="mi">1234556677</span>
@@ -666,8 +684,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>:::{admonition} 실수형 데이터 표기법<br />
-:class: info</p>
+<div class="info admonition">
+<p class="admonition-title">실수형 데이터 표기법  </p>
 <p>실수형 데이터 타입의 경우 정수데이타와 달리 유효숫자의 범위에 대한 한계가 존재한다.</p>
 <p>컴퓨터에서 표준화된 <strong>실수형 데이터 표기법</strong>은 크게 두 가지가 있다.</p>
 <p>첫 번째는 0.12, 1.12345678 등과 같이 우리가 흔히 아는 <strong>소수점 표현 방식</strong>이다. 소수점 표현 방식의
@@ -675,6 +693,7 @@ title="Print to PDF"
 <p>두 번째는 <strong>지수 표현 방식</strong>이다. 지수(Exponential)는 E로 표기하는데 과학이나 공학에서 아주 큰 숫자를 간단하게 표기할 때 사용하며, 의미는 10^이다.
 예를들어, 1.23e+5은 1.23 * (10**5)이며, 123000.0과 같다.
 지수표현 방식 역시 유효한 자리수의 한계를 가진다.</p>
+</div>
 <ul class="simple">
 <li><p>소수점 표현 방식의 유효한 자리수 한계를 확인해보자. 소수점 17자리에서 반올림되어 소수점 16자리까지 표현되는 것을 확인할 수 있다.</p></li>
 </ul>
@@ -992,9 +1011,6 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>파이썬은 즐거워! 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1009,8 +1025,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>:::{admonition} 참고<br />
-:class: info</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;파이썬은 즐거워! &#39;</span> <span class="o">*</span> <span class="mi">3</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -1020,6 +1036,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>결론은 데이터 타입이 달라 덧셈연산을 할수가 없어 에러가 나온다.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;hello!&#39;</span> <span class="o">+</span> <span class="mi">5</span> <span class="p">)</span>
@@ -1092,19 +1109,22 @@ myvar2 = "Byun"
 my-var = "Byun" #_이외의 특수문자가 들어갈 수 없다.
 my var = "Byun" # 공백이 들어갈 수 없다.
 if = "Byun" #예약어는 사용할 수 없다.
-</code></pre><p>:::{admonition} 변수명으로 사용하면 안되는 것들
-:class: warning</p>
+</code></pre><div class="warning admonition">
+<p class="admonition-title">변수명으로 사용하면 안되는 것들</p>
 <p>아직 함수에 대해 배우지 않았지만 사용자의 편의를 위해 파이썬에는 이미 만들어져 내장되어 있는 <strong>내장함수</strong>가 많다. 예를들어, print(), input(), sum(), max(), min() …등이 이에 속한다.</p>
 <p>클래스 또한 이 강좌에서 다루지는 않지만 파이썬에 이미 만들어져 있는 <strong>클래스</strong>가 많다. 예를 들어, list(), dict(), set(), int(), str(), …등이 이에 속한다.</p>
 <p>이러한 내장함수명이나 클래스명을 변수명으로 사용하지 말자.
 내장함수명이나 클래스명을 변수명으로 사용하면 기존에 정의되어 있는 내장함수나 클래스의 기능이 정상적으로 동작하지 않아 에러를 만나게 될 것이다.</p>
 <p>예를들어, input = 100, print=’안녕하세요’와 같이 코드를 작성하지 않도록 하자.</p>
-<p>:::{admonition} 내장함수명, 클래스명을 변수명 만들어 실행시켰다면!
-:class: warning</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">내장함수명, 클래스명을 변수명 만들어 실행시켰다면!</p>
 <p>내장함수명, 클래스명을 변수명 만들어 실행시켰다면 당황하지 말고, 해당 코드는 삭제하고 메뉴 런타임 &gt;&gt; 런타임 다시시작을 눌러 초기화 시켜주면 된다.</p>
-<p>:::{admonition} 한글 변수명도 가능할까?<br />
-:class: info</p>
+</div>
+<div class="info admonition">
+<p class="admonition-title">한글 변수명도 가능할까?  </p>
 <p>물론, 한글 변수명도 가능하다. 한글 변수명을 사용하라고 말하고 싶지만 해외 운영체제의 경우 한글이 깨질 수 있으므로 가급적 영문변수명 사용을 권장한다.</p>
+</div>
 <p>다음에서 변수명으로 사용할 수 있는 것을 모두 골라보자.</p>
 <ol class="simple">
 <li><p>sum</p></li>
@@ -1134,13 +1154,14 @@ if = "Byun" #예약어는 사용할 수 없다.
 <li><p>변수 num과 hello에 저장된 값을 출력한다. 결과는 100 hi!가 출력된다.</p></li>
 <li><p>위 코드에서와 같이 변수에는 숫자뿐만 아니라 문자열을 저장할 수 있다.</p></li>
 </ul>
-<p>:::{admonition} 변수와 객체(object)<br />
-:class: tip</p>
+<div class="tip admonition">
+<p class="admonition-title">변수와 객체(object)  </p>
 <p>코드로 변수에 값을 저장하면 실제 컴퓨터에서는 어떻게 동작할까?
 예를들어, 변수 num에 100을 저장했다면 100이라는 값이 메모리에 할당되는데 이를 <strong>객체</strong>라고 한다.</p>
 <p><strong>객체</strong>는 id, value, type을 갖고 있다. <strong>id</strong>는 메모리상에서의 객체의 주소이며, <strong>value</strong>는 메모리에 저장된 객체가 가지고 있는 값, <strong>type</strong>은 객체가 지원하는 연산을 정의하고 있는 객체의 타입을 의미한다.
 그리고 변수가 그 객체를 가르킨다.</p>
 <p>변수 역시 메모리의 어딘가에 할당되는 공간인데, 그 공간에는 객체의 메모리 주소가 저장된다. 즉, 변수 num의 공간에는 100이 저장되어 있는 객체의 메모리 주소가 저장되어 있고, 변수를 통해 실제 객체에 접근할 수 있게 된다.</p>
+</div>
 <div align="center"><img src="https://haesunbyun.github.io/AISW/_images/ch02/variable.png" style="width:600px;"></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;sun&#39;</span>
@@ -1162,14 +1183,15 @@ if = "Byun" #예약어는 사용할 수 없다.
 </div>
 </div>
 </div>
-<p>:::{admonition} 주의!
-:class: warning</p>
+<div class="warning admonition">
+<p class="admonition-title">주의!</p>
 <p>초보자의 경우, 변수명과 문자열에 익숙하지 않아 변수명에 문자열 처리를 하여 출력을 하는 실수를 범하기도 한다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>위와 같이 코드를 작성했다면, 변수 name에 저장되어 있는 ‘sun’이 출력되는 것이 아니라 ‘name’이라는 문자열 자체가 출력된다.
 변수 name과 문자열 ‘name’은 서로 다르다는 것에 주의하자.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;young&quot;</span>
@@ -1211,12 +1233,13 @@ if = "Byun" #예약어는 사용할 수 없다.
 <li><p>라인 2에서 변수 spam을 가진 연산식은 어떤 순서로 실행될까? 대입연산자(=)가 쓰인 코드의 순서는 항상 = 기호 오른쪽의 연산을 먼저 실행한 후, 그 결과를 = 기호 왼쪽의 변수에 저장한다. 따라서 spam + 5의 연산을 먼저 실행하고 그 결과를 대입연산자 왼쪽에 있는 변수 spam에 저장한다.</p></li>
 <li><p>결과 20이 출력된다.</p></li>
 </ul>
-<p>:::{admonition} 주의
-:class: warning</p>
+<div class="warning admonition">
+<p class="admonition-title">주의</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>위와 같이 코드를 작성하지 않도록 하자. print() 함수는 대입연산식을 수행할 수 없다.</p>
+</div>
 <ul class="simple">
 <li><p>코딩을 하다보면 에러를 자주 마주치게 된다. 에러를 두려워하지 말자. 에러메시지는 여러분에게 많은 정보를 알려준다.</p></li>
 <li><p>NameError로 주로 변수명을 정의하지 않고 사용하였을 때 발생한다.</p></li>
@@ -1253,44 +1276,6 @@ if = "Byun" #예약어는 사용할 수 없다.
 </div>
 <div class="section" id="id7">
 <h2>실습문제<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
-<p>::::{grid-row} 1
-:::{grid-item-card}
-:class-header: bg-light
-문제 1. 다음 내용을 코드로 작성하시오.
-^^^</p>
-<ul class="simple">
-<li><ol class="simple">
-<li><p>변수 insa에 ‘Hello!’를 저장하시오.</p></li>
-</ol>
-</li>
-<li><ol class="simple">
-<li><p>변수 name에 본인 이름을 영어로 저장하시오.</p></li>
-</ol>
-</li>
-<li><ol class="simple">
-<li><p>Hello! 본인 이름이 나오게 출력하시오. (예: Hello!Alice)</p></li>
-</ol>
-</li>
-<li><ol class="simple">
-<li><p>Hello! 본인 이름 사이에 공백을 추가해서 출력하시오. (예: Hello! Alice)
-:::</p></li>
-</ol>
-</li>
-</ul>
-<p>::::{grid-row} 1
-:::{grid-item-card}
-:class-header: bg-light
-문제2. 변수활용하여 수식으로 표현해보기
-^^^
-x는 3이다. 변수 x를 활용하여 수식을 작성해보고 y를 출력하시오.</p>
-<p>$ y=[{(𝑥^2−2𝑥)−6}×2]+(3𝑥−3)÷2 $</p>
-<p>::::{grid-row} 1
-:::{grid-item-card}
-:class-header: bg-light
-문제3. 문자열 표현해보기
-^^^
-변수 name에 ‘지수’를 넣고 변수를 활용하여 3번 연속으로 ‘지수야 반가워’를 출력하시오.</p>
-<p>Output: ‘지수야 반가워 지수야 반가워 지수야 반가워’</p>
 </div>
 <div class="section" id="id8">
 <h2>마무리<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
