@@ -83,8 +83,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Chapter 8. pandas" href="A_chapter8.html" />
@@ -267,24 +265,6 @@ title="Launch on Colab"
   </span>
 <span class="headerbtn__text-container">Colab</span>
 </a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
 
       </li>
       
@@ -719,7 +699,7 @@ title="Print to PDF"
 <li><p>그래프를 그리기 위한 수식은 다음과 같다.</p></li>
 </ul>
 <blockquote>
-<div><p><span class="math notranslate nohighlight">\(y=2x^2-3x+1\)</span></p>
+<div><p>$y=2x^2-3x+1$</p>
 </div></blockquote>
 <ul class="simple">
 <li><p>차후에 배우겠지만, 파이썬으로 그래프를 그리기 위해서는 matplotlib.pyplot 모듈을 불러와야 한다.</p></li>
@@ -746,21 +726,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제1. 1차원 배열 생성하기</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">다음과 같은 배열을 생성하시오.</p>
-<p class="sd-card-text">array([10,  8, 15,  7, 19])</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제1. 1차원 배열 생성하기
+^^^</p>
+<p>다음과 같은 배열을 생성하시오.</p>
+<p>array([10,  8, 15,  7, 19])
+:::</p>
 </div>
 <div class="section" id="id1">
 <h2>2-D array 생성하기<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
@@ -820,25 +793,18 @@ number of columns: 3
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제2. 2차원 배열 생성하기</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">다음과 같은 배열을 생성하시오.</p>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제2. 2차원 배열 생성하기
+^^^</p>
+<p>다음과 같은 배열을 생성하시오.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">]])</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>:::</p>
 </div>
 <div class="section" id="id2">
 <h2>3-D array 생성하기<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
@@ -868,15 +834,12 @@ number of columns: 3
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제3. 3차원 배열 생성하기</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">다음과 같은 배열을 생성하시오.</p>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제3. 3차원 배열 생성하기
+^^^</p>
+<p>다음과 같은 배열을 생성하시오.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[[</span><span class="mi">100</span>  <span class="mi">90</span>  <span class="mi">80</span><span class="p">]</span>
   <span class="p">[</span> <span class="mi">70</span>  <span class="mi">60</span>  <span class="mi">50</span><span class="p">]]</span>
 
@@ -887,30 +850,19 @@ number of columns: 3
   <span class="p">[</span> <span class="mi">44</span>  <span class="mi">55</span>  <span class="mi">66</span><span class="p">]]]</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제4. 3차원 배열 생성하기</p>
-</div>
-<div class="sd-card-body docutils">
+<p>:::</p>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제4. 3차원 배열 생성하기
+^^^</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ar3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]],</span> 
                 <span class="p">[[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ar3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">arange()와 reshape()으로 변수 ar3와 동일한 3차원 배열을 만들어보세요.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>arange()와 reshape()으로 변수 ar3와 동일한 3차원 배열을 만들어보세요.
+:::</p>
 <ul class="simple">
 <li><p>3차원 배열의 열의 개수는 <code class="docutils literal notranslate"><span class="pre">len(배열명[행인덱스,열인덱스])</span></code>로 확인할 수 있다.</p></li>
 </ul>
@@ -1242,7 +1194,10 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0  1  2  3  4  5  6  7  8  9 10 11] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0  1  2  3  4  5  6  7  8  9 10 11]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 
 ===결과===
 5
@@ -1326,7 +1281,10 @@ number of columns: 3
   [ 3  4  5]]
 
  [[ 6  7  8]
-  [ 9 10 11]]] 
+  [ 9 10 11]]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 
 ===결과===
 11
@@ -1403,21 +1361,14 @@ number of columns: 3
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제5. Zero 배열 생성</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고 모두 0으로 채우시오.</p>
-<p class="sd-card-text">깊이 x 행 x 렬: 3 x 3 x 3</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제5. Zero 배열 생성
+^^^</p>
+<p>크기가 다음과 같은 임의의 배열을 생성하고 모두 0으로 채우시오.</p>
+<p>깊이 x 행 x 렬: 3 x 3 x 3
+:::</p>
 </div>
 <div class="section" id="ones">
 <h3>ones()<a class="headerlink" href="#ones" title="Permalink to this headline">#</a></h3>
@@ -1439,21 +1390,14 @@ number of columns: 3
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제6. One 배열 생성</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고 모두 1로 채우시오.</p>
-<p class="sd-card-text">깊이 x 행 x 렬: 2 x 5 x 4</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제6. One 배열 생성
+^^^</p>
+<p>크기가 다음과 같은 임의의 배열을 생성하고 모두 1로 채우시오.</p>
+<p>깊이 x 행 x 렬: 2 x 5 x 4
+:::</p>
 </div>
 <div class="section" id="np-random">
 <h3>np.random<a class="headerlink" href="#np-random" title="Permalink to this headline">#</a></h3>
@@ -1469,8 +1413,8 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.44528999 0.16883791 0.46080835 0.17346252 0.0141874 ]
- [0.26382044 0.25559711 0.20547197 0.18712992 0.60903403]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.0216698  0.65564479 0.92129529 0.59486459 0.16597873]
+ [0.23478422 0.9977425  0.34017357 0.87070052 0.31696968]]
 </pre></div>
 </div>
 </div>
@@ -1482,9 +1426,9 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3.61929226 3.77269928]
- [3.97991763 3.62877985]
- [3.8148326  3.69710512]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3.61462045 3.59433824]
+ [3.59025154 3.69624985]
+ [3.68418692 3.5256324 ]]
 </pre></div>
 </div>
 </div>
@@ -1496,13 +1440,13 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[-5 -5 -1 -2]
-  [ 2 -2  4  2]
-  [ 0  3 -2 -3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[ 1  1  4  2]
+  [-2 -3 -5 -4]
+  [-5 -1  1 -1]]
 
- [[-4  3  4  1]
-  [ 4 -4  1  0]
-  [ 0  1  3 -1]]]
+ [[-5  3  0 -4]
+  [-4 -3 -3 -1]
+  [-3 -3  1  1]]]
 </pre></div>
 </div>
 </div>
@@ -1539,50 +1483,36 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[26 27]
- [30 14]
- [87 44]
- [46 10]
- [16 42]
- [73 49]
- [15 98]
- [38 42]
- [27 73]
- [97 51]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[65 72]
+ [82 41]
+ [39 52]
+ [41 31]
+ [50 33]
+ [28 26]
+ [38 78]
+ [50 82]
+ [85 15]
+ [66 49]]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제7. 랜덤 배열 생성</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고, 0이상 1미만의 임의의 실수로   채우시오.</p>
-<p class="sd-card-text">깊이 x 행 x 렬: 5 x 5 x 2</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제8. 랜덤 배열 생성</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">크기가 다음과 같은 임의의 배열을 생성하고 4.5이상 7미만의 임의의 실수로  채우시오.</p>
-<p class="sd-card-text">깊이 x 행 x 렬: 7 x 1 x 4</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제7. 랜덤 배열 생성
+^^^</p>
+<p>크기가 다음과 같은 임의의 배열을 생성하고, 0이상 1미만의 임의의 실수로   채우시오.</p>
+<p>깊이 x 행 x 렬: 5 x 5 x 2</p>
+<p>:::</p>
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제8. 랜덤 배열 생성
+^^^</p>
+<p>크기가 다음과 같은 임의의 배열을 생성하고 4.5이상 7미만의 임의의 실수로  채우시오.</p>
+<p>깊이 x 행 x 렬: 7 x 1 x 4
+:::</p>
 </div>
 <div class="section" id="linspace">
 <h3>linspace()<a class="headerlink" href="#linspace" title="Permalink to this headline">#</a></h3>
@@ -1705,19 +1635,19 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.81670201 0.33747302 0.3565004  0.92969629]
-  [0.24761632 0.73838566 0.77637742 0.29278498]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.51033301 0.51304376 0.64182549 0.12950735]
+  [0.42351075 0.48046436 0.80400734 0.5009367 ]]
 
- [[0.82583502 0.40040221 0.77731843 0.22232441]
-  [0.60883844 0.35455978 0.55327031 0.02252411]]]
-
-
-===결과===
-0.022524111784988476
+ [[0.62088418 0.2029233  0.83371047 0.79252602]
+  [0.48219941 0.25419673 0.37467302 0.89079233]]]
 
 
 ===결과===
-0.9296962914397625
+0.12950735027954963
+
+
+===결과===
+0.804007342786377
 </pre></div>
 </div>
 </div>
@@ -1737,8 +1667,8 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
-3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+15
 </pre></div>
 </div>
 </div>
@@ -1787,23 +1717,16 @@ number of columns: 3
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제 1. 아래 값들의 평균을 백분율로 소수점 2자리까지 나타내시오. 소수점을 구할때는 round()함수를 사용하세요.</p>
-</div>
-<div class="sd-card-body docutils">
+<p>:::{grid} 1
+:::{grid-item-card}
+:class-header: bg-light</p>
+<p>😄문제 1. 아래 값들의 평균을 백분율로 소수점 2자리까지 나타내시오. 소수점을 구할때는 round()함수를 사용하세요.</p>
+<p>^^^</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.83333333</span><span class="p">,</span> <span class="mf">0.76404494</span><span class="p">,</span> <span class="mf">0.85393258</span><span class="p">,</span> <span class="mf">0.82022472</span><span class="p">,</span> <span class="mf">0.86516854</span><span class="p">,</span><span class="mf">0.80898876</span><span class="p">,</span> <span class="mf">0.80898876</span><span class="p">,</span> <span class="mf">0.7752809</span> <span class="p">,</span> <span class="mf">0.84269663</span><span class="p">,</span> <span class="mf">0.82022472</span><span class="p">])</span>
 </pre></div>
 </div>
-<p class="sd-card-text">round(데이터, n): 데이터를 소수점 n자리까지 나타낸다.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>round(데이터, n): 데이터를 소수점 n자리까지 나타낸다.</p>
+<p>:::</p>
 </div>
 <div class="section" id="var-std">
 <h3>var(), std()<a class="headerlink" href="#var-std" title="Permalink to this headline">#</a></h3>
@@ -1822,25 +1745,25 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[40.50308157 56.59169898 83.48666291 31.18902341  1.69992704 30.96412479
- 68.80869593 66.01200847 78.35061169 85.37464014 57.83477798 10.30288754
-  3.80429575  1.60543702 87.86006636 10.8440683  37.01183139 48.03626076
- 41.88675576 66.45915045 79.9699311  46.25315709 49.2206467  46.60687462
- 96.55708468 27.33997016 26.53686546 59.8336466  64.66183903 52.95824952
- 93.72701895 46.83279836 78.88315528 63.7051911  30.41977858  4.97419439
-  4.50867382 79.12533274 95.10623211 57.58109025 60.2803148  19.76858068
- 69.92399496 89.24128684 31.28091408  2.00208031 85.36752833 44.1385089
-  7.87803766 95.67525121 20.87983097 38.59095216 52.98513177 80.79280044
- 79.13834057  5.49428725  4.05608696 99.67862862 24.43572176 32.68606256
- 29.8078903  47.55261012 80.71917763 37.16639453 56.57431699 76.14005288
-  3.9088271  46.57535746 90.05391768 44.24907775 25.61816122 45.2154132
- 78.45093814 23.5209951  55.20072386 98.233169   75.98876023 12.00494104
- 88.94739724 27.16051154]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[59.99211965 42.84932032 86.59197035 66.98070628 89.81648693 58.49157865
+ 43.23701873  6.09644666 53.53542026 33.91908542 51.15740263 34.74946823
+ 78.97499785 75.20339757 30.14101045 54.14153965 62.19721385 99.22886854
+ 93.351329   84.42401756 10.95069879 84.06304824 71.53634057 67.48552613
+ 21.32689725 78.05956185 68.87637463  2.52930494 34.89293834 90.7304147
+ 36.41709124 34.2480718  13.79221373 28.1046512  30.8798799   6.00879432
+ 66.97822533 42.59721134  4.28810966 17.19671062 28.35850385  4.47417507
+ 37.52845336 15.85856733 86.57808537 40.67647363 69.47605918  7.30926574
+ 85.2682383  29.3851443  61.17522353 64.50481974 76.01560721 60.89011604
+ 82.55079931 79.3207614  36.04997219 89.2303389  70.74778885 14.2479392
+ 56.9217314   3.68855337 63.52369931 94.09512374 30.24165215 80.38745059
+ 28.45220624 23.51452007 22.80573449 40.52790867 68.83826722 32.06669495
+ 97.0644373  11.13857629 47.75354231 47.16163422 30.88136395 91.5554206
+ 74.57353401 89.53366347]
 
 
 ===결과===
-838.9279378546602
-28.964252758437603
+786.0135464848912
+28.035933130268578
 </pre></div>
 </div>
 </div>
@@ -1861,12 +1784,12 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-4  2  2  0 -6]
- [ 2  0  0 -2  0]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 8 -9  3  5  7]
+ [ 2 -3 -5 -7  5]]
 
 
 ===결과===
-[-6 -4 -2  0  2]
+[-9 -7 -5 -3  2  3  5  7  8]
 </pre></div>
 </div>
 </div>
@@ -1887,13 +1810,13 @@ number of columns: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-4  8  1  5 -8]
- [ 3 -4 -6 -5  6]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  7   1   2   8   4]
+ [  6 -10   6   7  -3]]
 
 
 ===결과===
-[[4 8 1 5 8]
- [3 4 6 5 6]]
+[[ 7  1  2  8  4]
+ [ 6 10  6  7  3]]
 </pre></div>
 </div>
 </div>
@@ -2084,8 +2007,8 @@ number of columns: 3
     {
         requestKernel: true,
         binderOptions: {
-            repo: "haesunbyun/AISW",
-            ref: "gh-pages",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
