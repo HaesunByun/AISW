@@ -388,7 +388,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map">알아두면 유용한 map() 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">마무리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">연습문제</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-pw-check">Problem: pw_check()함수 만들기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-id-check">Problem: id_check()함수 만들기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-login-check">Problem: login_check()함수 만들기</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">마무리</a></li>
 </ul>
             </nav>
         </div>
@@ -1078,7 +1084,105 @@ Global area: 유재석
 </div>
 </div>
 <div class="section" id="id10">
-<h2>마무리<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>연습문제<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<div class="section" id="problem-pw-check">
+<h3>Problem: pw_check()함수 만들기<a class="headerlink" href="#problem-pw-check" title="Permalink to this headline">#</a></h3>
+<p>😄 사용자가 입력한 비밀번호가 “pythonisfun!”과 같은지 판별하는 pw_check()함수를 정의하시오. 입력과 출력은 함수 밖에서 이루어지며, 결과는 True, False로 반환합니다.</p>
+<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+<p>Input Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pythoniseasy!
+</pre></div>
+</div>
+<p>Output Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">password</span><span class="p">:</span> 
+<span class="kc">False</span>
+</pre></div>
+</div>
+<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p>Input Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pythonisfun!
+</pre></div>
+</div>
+<p>Output Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">password</span><span class="p">:</span> 
+<span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="problem-id-check">
+<h3>Problem: id_check()함수 만들기<a class="headerlink" href="#problem-id-check" title="Permalink to this headline">#</a></h3>
+<p>😄 문자열이 주어졌을 때, 그것이 아래의 &lt;아이디 조건&gt;들에 모두 부합하는지 확인하는 id_check()함수를 정의하시오. 입력과 출력은 함수 밖에서 이루어지며, 결과는 True, False로 반환합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">아이디</span> <span class="n">조건</span><span class="o">&gt;</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">문자열의</span> <span class="n">길이는</span> <span class="mi">9</span><span class="o">-</span><span class="mi">11</span> <span class="p">(</span><span class="n">inclusive</span><span class="p">)</span><span class="o">.</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">문자열의</span> <span class="n">첫</span> <span class="mi">7</span><span class="n">글자는</span> <span class="s1">&#39;student&#39;</span> <span class="p">(</span><span class="n">case</span> <span class="n">sensitive</span><span class="p">)</span><span class="o">.</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">문자열의</span> <span class="n">마지막</span> <span class="mi">1</span><span class="n">글자는</span> <span class="s1">&#39;!&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+<p>Input Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>student33!
+</pre></div>
+</div>
+<p>Output Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">ID</span><span class="p">:</span> 
+<span class="kc">True</span>
+</pre></div>
+</div>
+<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p>Input Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>student!
+</pre></div>
+</div>
+<p>Output Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">ID</span><span class="p">:</span> 
+<span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="problem-login-check">
+<h3>Problem: login_check()함수 만들기<a class="headerlink" href="#problem-login-check" title="Permalink to this headline">#</a></h3>
+<p>😄 앞에서 정의한 id_check()와 pw_check()를 활용하여
+id와 pw를 검사하는 login_check()함수를 정의하시오. ID와 pw입력은 함수 밖에서 이루어집니다.</p>
+<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
+<p>Input Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>student!
+pythoniseasy!
+</pre></div>
+</div>
+<p>Output Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">ID</span><span class="p">:</span> 
+<span class="n">Input</span> <span class="n">password</span><span class="p">:</span> 
+<span class="n">Incorrect</span> <span class="n">ID</span>
+</pre></div>
+</div>
+<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
+<p>Input Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>student33!
+pythoniseasy!
+</pre></div>
+</div>
+<p>Output Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">ID</span><span class="p">:</span> 
+<span class="n">Input</span> <span class="n">password</span><span class="p">:</span> 
+<span class="n">Incorrect</span> <span class="n">password</span>
+</pre></div>
+</div>
+<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-3</span></code></font></p>
+<p>Input Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>student33!
+pythonisfun!
+</pre></div>
+</div>
+<p>Output Sample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">ID</span><span class="p">:</span> 
+<span class="n">Input</span> <span class="n">password</span><span class="p">:</span> 
+<span class="n">Success</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>마무리<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>함수는 프로그램에서 자주 사용되는 소스코드를 만들어두고 필요할 때 사용하는 기능이다.</p></li>
 <li><p>코드를 구조화 체계화 하기 위해서도 정의한다.</p></li>
@@ -1172,7 +1276,13 @@ Global area: 유재석
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map">알아두면 유용한 map() 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">마무리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">연습문제</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-pw-check">Problem: pw_check()함수 만들기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-id-check">Problem: id_check()함수 만들기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-login-check">Problem: login_check()함수 만들기</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">마무리</a></li>
 </ul>
   </nav></div>
 
