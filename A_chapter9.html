@@ -1,0 +1,2654 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 9. pandas &#8212; AISW</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "haesunbyun/AISW");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'A_chapter9';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Chapter 8. numpy" href="A_chapter8.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">AISW</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    소개
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">PYTHON</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A_chapter0.html">Chapter 0. 프로그래밍 언어와 파이썬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter1.html">Chapter 1. 기본자료형과 변수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter2.html">Chapter 2. 입출력과 타입변환</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter3.html">Chapter 3. 조건문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter4.html">Chapter 4. 반복문</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter5.html">Chapter 5. 리스트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter6.html">Chapter 6. 딕셔너리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter7.html">Chapter 7. 함수</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter8.html">Chapter 8. numpy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 9. pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/haesunbyun/AISW/blob/gh-pages/_sources/A_chapter9.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/A_chapter9.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 9. pandas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Series 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Series 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-indexing-slicing">Series indexing &amp; slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-filtering">Series 비교연산과 filtering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">DataFrame 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">데이터 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-slicing">행/열 Indexing &amp; slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#df-iloc">df.iloc[]</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#df-loc">df.loc[]</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#df">df</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">행/열 추가, 삭제</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">연습문제</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-9-pandas">
+<h1>Chapter 9. pandas<a class="headerlink" href="#chapter-9-pandas" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>판다스는 파이썬에서 사용하는 데이터 분석 라이브러리이다.</p></li>
+<li><p>‘pandas’라는 이름은 다차원으로 구조화된 데이터를 뜻하는 경제학 용어인 Panel data와 파이썬 데이터 분석인 Python data analysis에서 따온 것이다.</p></li>
+<li><p>대용량의 데이터를 처리하는데 편리한 도구이며,
+데이터의 재배치, 집계, 부분집합 구하기 등을 쉽게 할 수 있다.</p></li>
+<li><p>Pandas는 Series와 DataFrame이라는 자료구조를 제공한다.</p></li>
+</ul>
+<p>추천자료:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wikidocs.net/book/7188">https://wikidocs.net/book/7188</a></p></li>
+</ul>
+<p>[Python 완전정복 시리즈] 2편 : Pandas DataFrame 완전정복</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/index.html">https://pandas.pydata.org/docs/reference/index.html</a></p></li>
+</ul>
+<div class="section" id="series">
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>시리즈는 1차원 배열에 인덱스를 가지고 있는 구조이다.</p></li>
+<li><p>이때 값은 인덱스 번호(기본 인덱스)로도 접근 할 수 있고 인덱스명(설정 인덱스)으로도 접근할 수 있다.</p></li>
+<li><p>즉, 인덱스 번호로 값을 접근할 수 있는 리스트(list)와 키(key)로 값을 접근할 수 있는 딕셔너리(dict)의 장점을 섞어 놓은 자료구조이다.</p></li>
+</ul>
+<div class="section" id="id1">
+<h3>Series 생성<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>시리즈를 생성하기 위해서는 먼저 pandas 모듈을 불러와야 한다.</p></li>
+<li><p>pandas 모듈은 보통 pd라는 별칭을 사용한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>데이터만 넣어서 시리즈를 생성할 수 있다.</p></li>
+<li><p>형식은 아래와 같다. 이때 Series의 ‘S’를 대문자로 써야 한다는 것에 주의하자.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span> <span class="ow">or</span> <span class="n">array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">46</span><span class="p">]</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     84
+1     21
+2     87
+3    100
+4     59
+5     46
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>type() 함수로 시리즈의 타입을 확인해보자.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>시리즈의 모양은 변수 shape으로 확인할 수 있다.</p></li>
+<li><p>1차원 배열은 (원소갯수, ) 형태로 나온다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6,)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>데이터와 인덱스를 넣어서 시리즈를 생성할 수 있다.</p></li>
+<li><p>형식은 다음과 같다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span> <span class="ow">or</span> <span class="n">array</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="nb">list</span> <span class="ow">or</span> <span class="n">array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">46</span><span class="p">]</span>
+<span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span><span class="s1">&#39;길동&#39;</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">,</span><span class="s1">&#39;순이&#39;</span><span class="p">,</span><span class="s1">&#39;철이&#39;</span><span class="p">]</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">names</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>딕셔너리를 넣어서 시리즈를 생성할 수 있다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;철수&#39;</span><span class="p">:</span><span class="mi">84</span><span class="p">,</span> <span class="s1">&#39;영이&#39;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;길동&#39;</span><span class="p">:</span><span class="mi">87</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;순이&#39;</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span> <span class="s1">&#39;철이&#39;</span><span class="p">:</span><span class="mi">46</span><span class="p">}</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Series 연산<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>시리즈에 산술연산을 적용해보자.</p></li>
+<li><p>이때, 연산하여 나온 결과 또한 시리즈타입이다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">names1</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span><span class="s1">&#39;길동&#39;</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">,</span><span class="s1">&#39;순이&#39;</span><span class="p">,</span><span class="s1">&#39;철이&#39;</span><span class="p">]</span>
+<span class="n">score1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">46</span><span class="p">]</span>
+<span class="n">names2</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;길동&#39;</span><span class="p">,</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span><span class="s1">&#39;철이&#39;</span><span class="p">,</span><span class="s1">&#39;순이&#39;</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">]</span>
+<span class="n">score2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+
+<span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">score1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names1</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">score2</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
+길동    99
+철수    87
+영이    87
+철이    84
+순이    77
+미영    15
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     94
+영이     31
+길동     97
+미영    110
+순이     69
+철이     56
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동    186
+미영    115
+순이    136
+영이    108
+철수    171
+철이    130
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동   -12
+미영    85
+순이   -18
+영이   -66
+철수    -3
+철이   -38
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">s1</span><span class="o">*</span><span class="n">s2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동    4306.5
+미영     750.0
+순이    2271.5
+영이     913.5
+철수    3654.0
+철이    1932.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">%</span><span class="k">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수    0
+영이    1
+길동    1
+미영    0
+순이    1
+철이    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">**</span><span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동     150702813899780423
+미영    5076944270305263616
+순이    -493116772360357717
+영이   -2071367028796559651
+철수                      0
+철이                      0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="series-indexing-slicing">
+<h3>Series indexing &amp; slicing<a class="headerlink" href="#series-indexing-slicing" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>시리즈는 인덱스 번호(기본 인덱스)로도 접근 할 수 있고 인덱스명(설정 인덱스)으로도 접근할 수 있다고 앞에서 언급했었다.</p></li>
+<li><p>따라서 시리즈에서는 인덱싱과 슬라이싱에도 두 가지 접근법을 모두 사용한다.</p></li>
+</ul>
+<ul class="simple">
+<li><p>기본 인덱스를 이용하여 인덱싱/슬라이싱을 하는 것은 이미 배웠던 리스트나 문자열에서의 인덱싱/슬라이싱과 동일하다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">시리즈변수명</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">:</span><span class="n">step</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동     87
+미영    100
+순이     59
+철이     46
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수    84
+영이    21
+길동    87
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수    84
+길동    87
+순이    59
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>설정 인덱스로 인덱싱/슬라이싱을 하는 것은 기본 인덱스 사용방법과 한 가지만 제외하고 동일하다. 그 한가지는 슬라이싱 할때 끝 인덱스까지 포함한다는 것이다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;영이&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>end값인 ‘순이’까지 포함하여 슬라이싱한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;영이&#39;</span><span class="p">:</span><span class="s1">&#39;순이&#39;</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>영이     21
+길동     87
+미영    100
+순이     59
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;미영&#39;</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>미영    100
+순이     59
+철이     46
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Series 데이터 추가, 수정, 삭제</p>
+<ul class="simple">
+<li><p>시리즈에 데이터를 추가하는 것과 수정하는 것은 동일한 형식을 사용한다.</p></li>
+<li><p>시리즈에 인덱스가 있으면 수정하고, 없으면 추가한다. 기본인덱스 설정인덱스 모두 사용 가능하다.</p></li>
+<li><p>형식은 다음과 같다.
+: 시리즈명[인덱스] = value</p></li>
+</ul>
+<ul class="simple">
+<li><p>‘슬기’는 인덱스에 없으므로 추가된다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;슬기&#39;</span><span class="p">]</span><span class="o">=</span> <span class="mi">87</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     87
+미영    100
+순이     59
+철이     46
+슬기     87
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>‘길동’은 인덱스에 있으므로 수정된다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;길동&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">88</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     88
+미영    100
+순이     59
+철이     46
+슬기     87
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>인덱스 ‘철이’가 삭제된다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">s1</span><span class="p">[</span><span class="s1">&#39;철이&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     84
+영이     21
+길동     88
+미영    100
+순이     59
+슬기     87
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="series-filtering">
+<h3>Series 비교연산과 filtering<a class="headerlink" href="#series-filtering" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>시리즈에서도 비교연산의 결과를 필터링하는데 사용할 수 있다.</p></li>
+<li><p>아래 코드는 시리즈 s1에서 85이상인 값들에 대해서 필터링한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="n">s1</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>길동     88
+미영    100
+슬기     87
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataframe">
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h2>
+<p>DataFrame은 행과 열로 이루어진 2차원 형태의 배열이다.
+즉, 시리즈들의 묶음이라고 생각할 수 있다. 반대로 데이터프레임의 각 칼럼은 하나의 시리즈이다.</p>
+<div class="section" id="id3">
+<h3>DataFrame 생성<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>코랩 파일을 장시간 사용하지 않아 구글 서버와 세션이 끊기거나 파일을 새로 열었을 때에는 다시 pandas 모듈을 불러와야한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>시리즈를 이용하여 데이터프레임을 생성해보자.</p></li>
+<li><p>먼저 아래와 같이 시리즈 2개를 만들었다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names1</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span><span class="s1">&#39;길동&#39;</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">,</span><span class="s1">&#39;순이&#39;</span><span class="p">,</span><span class="s1">&#39;철이&#39;</span><span class="p">]</span>
+<span class="n">score1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">46</span><span class="p">]</span>
+<span class="n">names2</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;길동&#39;</span><span class="p">,</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span><span class="s1">&#39;철이&#39;</span><span class="p">,</span><span class="s1">&#39;순이&#39;</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">]</span>
+<span class="n">score2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+
+<span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">score1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names1</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">score2</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>데이타프레임은 pd.DataFrame()으로 생성한다.</p></li>
+<li><p>시리즈를 데이타프레임의 열(column)으로 넣어준다.</p></li>
+<li><p>데이터프레임을 print()를 사용하지 않고 출력해보자.</p></li>
+<li><p>테이블형태로 나오는 것을 확인할 수 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;국어&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">s1</span>  <span class="c1"># 국어 칼럼 생성</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;영어&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">s2</span>  <span class="c1"># 영어 칼럼 생성</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;합계&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;국어&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;영어&#39;</span><span class="p">]</span> <span class="c1"># 합계 칼럼 생성</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>합계</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>171</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>87</td>
+      <td>108</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>99</td>
+      <td>186</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>15</td>
+      <td>115</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>77</td>
+      <td>136</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>84</td>
+      <td>130</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>데이터프레임을 print(데이타프레임명)로 출력하면 테이블 형태로 나오지 않고 텍스트로 나온다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     국어  영어   합계
+철수   84  87  171
+영이   21  87  108
+길동   87  99  186
+미영  100  15  115
+순이   59  77  136
+철이   46  84  130
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>데이타프레임을 리스트나 어레이로도 만들 수 있다.</p></li>
+<li><p>pd.DataFrame(리스트 또는 어레이)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">84</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">78</span><span class="p">],</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">84</span><span class="p">],</span> <span class="p">[</span><span class="mi">87</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">76</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">99</span><span class="p">],[</span><span class="mi">59</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">59</span><span class="p">],[</span><span class="mi">46</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">56</span><span class="p">]]</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+<span class="n">d1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>데이터프레임에 옵션 index와 columns에 인덱스와 칼럼명을 직접 명시해줄 수도 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">84</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">78</span><span class="p">],</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">84</span><span class="p">],</span> <span class="p">[</span><span class="mi">87</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">76</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">99</span><span class="p">],[</span><span class="mi">59</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">59</span><span class="p">],[</span><span class="mi">46</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">56</span><span class="p">]]</span>
+<span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span><span class="s1">&#39;길동&#39;</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">,</span><span class="s1">&#39;순이&#39;</span><span class="p">,</span><span class="s1">&#39;철이&#39;</span><span class="p">]</span>
+<span class="n">lectures</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;국어&#39;</span><span class="p">,</span><span class="s1">&#39;수학&#39;</span><span class="p">,</span><span class="s1">&#39;영어&#39;</span><span class="p">]</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">lectures</span><span class="p">)</span>
+<span class="n">d2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>딕셔너리를 pd.DataFrame()의 데이터로 넣어 줄 수도 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1-3. dict로 생성</span>
+<span class="n">ScoresWithLectures</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;수학&#39;</span><span class="p">:[</span><span class="mi">84</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">46</span><span class="p">],</span> <span class="s1">&#39;국어&#39;</span><span class="p">:[</span><span class="mi">87</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">77</span><span class="p">],</span> <span class="s1">&#39;영어&#39;</span><span class="p">:[</span><span class="mi">78</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">56</span><span class="p">]}</span>
+<span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span><span class="s1">&#39;길동&#39;</span><span class="p">,</span><span class="s1">&#39;미영&#39;</span><span class="p">,</span><span class="s1">&#39;순이&#39;</span><span class="p">,</span><span class="s1">&#39;철이&#39;</span><span class="p">]</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ScoresWithLectures</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+<span class="n">d3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>numpy에서 배웠던 전치행열 시키는 transpose() 또는 .T를 사용하여 행과 열을 교환할 수도 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">d3</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>철수</th>
+      <th>영이</th>
+      <th>길동</th>
+      <th>미영</th>
+      <th>순이</th>
+      <th>철이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>수학</td>
+      <td>84</td>
+      <td>21</td>
+      <td>87</td>
+      <td>100</td>
+      <td>59</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <td>국어</td>
+      <td>87</td>
+      <td>15</td>
+      <td>84</td>
+      <td>87</td>
+      <td>99</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>영어</td>
+      <td>78</td>
+      <td>84</td>
+      <td>76</td>
+      <td>99</td>
+      <td>59</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>데이터 확인<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>데이터프레임의 정보를 확인하기 위해 다음과 같은 변수 또는 메서드를 사용한다.</p>
+<ul>
+<li><p>shape: 모양을 확인한다.</p></li>
+<li><p>head(): 데이터프레임의 맨 위 5개 행을 보여준다.</p></li>
+<li><p>tail(): 데이터프레임의 맨 아래 5개 행을 보여준다.</p></li>
+<li><p>info(): 칼럼명, Non-Null count, Dtype 정보를 보여준다.</p></li>
+<li><p>isnull().sum(): 값이 없는(null) 갯수를 반환한다.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># d.head(3) # number없으면 default로 5개</span>
+<span class="c1"># d.tail()</span>
+<span class="c1"># d.info() # column name, Non-Null count, Dtype 정보를 보여준다.</span>
+<span class="c1"># d.isnull().sum()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-slicing">
+<h3>행/열 Indexing &amp; slicing<a class="headerlink" href="#indexing-slicing" title="Permalink to this headline">#</a></h3>
+<div class="section" id="df-iloc">
+<h4>df.iloc[]<a class="headerlink" href="#df-iloc" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>iloc는 index location의 약자로 기본인덱스로만 인덱싱과 슬라이싱을 할 수 있다.</p></li>
+<li><p>df.iloc[]을 사용하여 행추출/열추출/행렬추출을 해보자. 여기서의 df는 데이터프레임 변수명이다.</p></li>
+<li><p>형식은 다음과 같다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">행</span> <span class="n">또는</span> <span class="n">행범위</span><span class="p">,</span> <span class="n">열</span> <span class="n">또는</span> <span class="n">열범위</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>이때 행이든 열이든 하나만 명시했다면 그 결과는 시리즈로 나온다.</p></li>
+<li><p>행과 열 모두 범위로 명시했다면 그 결과는 데이터프레임으로 나온다.</p></li>
+</ul>
+<ul class="simple">
+<li><p>행추출에서 하나의 행만 썼다면 그 결과를 시리즈로 나온다.</p></li>
+<li><p>start와 end값을 지정해 슬라이싱으로 했다면 그 결과는 데이터프레임으로 나온다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">d3</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>열만 명시하려면 행을’ : ‘와 같이 쓴다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>행과 열을 모두 슬라이싱 범위로 줄 수 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> 
+<span class="c1">#d3.iloc[1:3, 2] </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="df-loc">
+<h4>df.loc[]<a class="headerlink" href="#df-loc" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>설정인덱스로만 인덱싱과 슬라이싱을 할 수 있다.</p></li>
+<li><p>사용하는 방법은 iloc[]와 같다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">행</span> <span class="n">또는</span> <span class="n">행범위</span><span class="p">,</span> <span class="n">열</span> <span class="n">또는</span> <span class="n">열범위</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;길동&#39;</span><span class="p">]</span> <span class="c1"># series로 반환</span>
+<span class="n">d3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;길동&#39;</span><span class="p">:</span><span class="s1">&#39;길동&#39;</span><span class="p">]</span> <span class="c1"># dataframe으로 반환</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;수학&#39;</span><span class="p">:</span><span class="s1">&#39;국어&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;철수&#39;</span><span class="p">:</span><span class="s1">&#39;영이&#39;</span><span class="p">,</span> <span class="s1">&#39;수학&#39;</span><span class="p">:</span><span class="s1">&#39;국어&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="df">
+<h4>df<a class="headerlink" href="#df" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>df만 써서 행 또는 열, 행과열을 추출하는 방법이 가장 어렵다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df 변수명만 사용하여 추출하는 경우</span>
+<span class="c1"># df[행범위][열이름 또는 열이름 범위]</span>
+<span class="c1"># df[열이름 또는 열이름 범위][행범위]</span>
+
+<span class="c1"># 행추출: index 번호, index명으로 추출 가능, 반드시 범위로 주어야 함</span>
+<span class="c1">#d3[2:3] </span>
+<span class="c1">#d3[&#39;길동&#39;:&#39;길동&#39;]</span>
+<span class="c1">#d3[2] # 에러</span>
+<span class="c1">#d3[&#39;길동&#39;] # 에러</span>
+
+<span class="c1"># 열추출: column명으로만 추출 가능, column 번호로 추출하지 못함. : 사용 못함</span>
+<span class="c1"># d3[&#39;국어&#39;] # series로 반환 </span>
+<span class="c1"># d3[[&#39;국어&#39;]] #하나의 열이지만 []묶음으로 처리하여 dataframe으로 반환</span>
+<span class="c1"># d3[[&#39;수학&#39;,&#39;영어&#39;]] # 여러개의 열, 리스트로 묶어줘야 함. </span>
+<span class="c1"># d3[[&#39;수학&#39;,&#39;국어&#39;]] # 맞붙어있는 열이라도 ,로 나열</span>
+<span class="c1"># d3[&#39;수학&#39;:&#39;국어&#39;] # 에러</span>
+<span class="c1"># d3[0:2] # column 번호가 아니라 index 번호로 인식</span>
+
+<span class="c1"># 행렬추출</span>
+<span class="c1"># d3[&#39;길동&#39;:&#39;미영&#39;][[&#39;수학&#39;,&#39;국어&#39;]]</span>
+<span class="c1"># d3[2:4][[&#39;수학&#39;,&#39;국어&#39;]]</span>
+
+<span class="c1"># d3[[&#39;수학&#39;,&#39;국어&#39;]][&#39;길동&#39;:&#39;미영&#39;]  </span>
+<span class="c1"># d3[[&#39;수학&#39;,&#39;국어&#39;]][2:4]          </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>행/열 추가, 삭제<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>‘합계’ 행을 추가해보자.</p></li>
+<li><p>‘합계’라는 인덱스가 없으면 생성하고, 있으면 업데이트 된다.</p></li>
+<li><p>‘합계’행에 들어갈 값은 sum()함수로 구한다.</p></li>
+<li><p>axis는 생략하면 기본값은 0이다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;합계&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">d3</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+<span class="n">d3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>총점 열을 추가해보자.</p></li>
+<li><p>axis가 1이면 열에 대해 작업한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="p">[</span><span class="s1">&#39;총점&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">d3</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">d3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+      <td>1298</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>groupby()를 통해서 그룹으로 묶어줄 수 있다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_groupby</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">d3</span><span class="p">[</span><span class="s1">&#39;총점&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">total_groupby</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>총점
+False    2
+True     5
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="p">[</span><span class="s1">&#39;총점&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">200</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>철수     True
+영이    False
+길동     True
+미영     True
+순이     True
+철이    False
+합계     True
+Name: 총점, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="p">[</span><span class="s1">&#39;Pass/Fail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pass&#39;</span> <span class="k">if</span> <span class="n">total</span><span class="o">&gt;</span><span class="mi">200</span> <span class="k">else</span> <span class="s1">&#39;Fail&#39;</span> <span class="k">for</span> <span class="n">total</span> <span class="ow">in</span> <span class="n">d3</span><span class="p">[</span><span class="s1">&#39;총점&#39;</span><span class="p">]]</span>
+<span class="n">d3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>Pass/Fail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>Fail</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>Fail</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+      <td>1298</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Pass&#39;</span><span class="p">:</span> <span class="mi">300000</span><span class="p">,</span> <span class="s1">&#39;Fail&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+
+<span class="n">d3</span><span class="p">[</span><span class="s1">&#39;scholarship&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">d3</span><span class="p">[</span><span class="s1">&#39;Pass/Fail&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+<span class="n">d3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>Pass/Fail</th>
+      <th>scholarship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>합계</td>
+      <td>397</td>
+      <td>449</td>
+      <td>452</td>
+      <td>1298</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>연습문제<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제1. DataFrame 수정하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">미영의 영어점수를 100점으로 수정하고 확인하시오.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제2. DataFrame 조건 확인하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">영어점수가 75점 미만인 사람들을 검색하여 확인하시오.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 영어점수가 75점 미만인 사람들의 영어점수를 10점씩 올려 수정하고, 전체 데이터프레임을 확인하시오.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제3. DataFrame 조건으로 수정하기</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">영어점수가 75점 미만인 사람들의 영어점수를 10점씩 올려 수정하고, 전체 데이터프레임을 확인하시오.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>행삭제/열삭제</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;합계&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">d3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>Pass/Fail</th>
+      <th>scholarship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>Pass</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>Fail</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Pass/Fail&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">d3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>수학</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>scholarship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>철수</td>
+      <td>84</td>
+      <td>87</td>
+      <td>78</td>
+      <td>249</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>영이</td>
+      <td>21</td>
+      <td>15</td>
+      <td>84</td>
+      <td>120</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>길동</td>
+      <td>87</td>
+      <td>84</td>
+      <td>76</td>
+      <td>247</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>미영</td>
+      <td>100</td>
+      <td>87</td>
+      <td>99</td>
+      <td>286</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>순이</td>
+      <td>59</td>
+      <td>99</td>
+      <td>59</td>
+      <td>217</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>철이</td>
+      <td>46</td>
+      <td>77</td>
+      <td>56</td>
+      <td>179</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text">😄문제4. 인구데이터 다뤄보기</p>
+</div>
+<div class="sd-card-body docutils">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url_1</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/HaesunByun/AISW/main/population_in_Seoul.txt&#39;</span>
+<span class="n">pop_Seoul</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url_1</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">header</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span><span class="n">thousands</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> 
+
+<span class="n">pop_Seoul</span>
+</pre></div>
+</div>
+<p>데이터프레임의 column명을 [‘구별’, ‘인구수’, ‘한국인’, ‘외국인’, ‘고령자’]로 변경하기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;구별&#39;</span><span class="p">,</span><span class="s1">&#39;인구수&#39;</span><span class="p">,</span><span class="s1">&#39;한국인&#39;</span><span class="p">,</span><span class="s1">&#39;외국인&#39;</span><span class="p">,</span><span class="s1">&#39;고령자&#39;</span><span class="p">]</span>
+<span class="n">pop_seoul</span>
+</pre></div>
+</div>
+<p>‘구별’을 인덱스로 설명하기</p>
+<p>pop_seoul.set_index(‘구별’,inplace=True)</p>
+<p>1번째 행(합계 데이터) 삭제하기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;합계&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pop_seoul</span>
+</pre></div>
+</div>
+<p>각 구별 한국인의 비율 구하기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="p">[</span><span class="s1">&#39;한국인비율(%)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pop_seoul</span><span class="p">[</span><span class="s1">&#39;한국인&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">pop_seoul</span><span class="p">[</span><span class="s1">&#39;인구수&#39;</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">pop_seoul</span>
+</pre></div>
+</div>
+<p>각 구별 외국인의 비율 구하기</p>
+<p>각 구별 고령자의 비율 구하기</p>
+<p>인구수 최대값 구하기</p>
+<p>인구수 최소값 구하기</p>
+<p>인구수와 고령자수 간의 상관 관계 구하기</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pop_seoul</span><span class="p">[[</span><span class="s1">&#39;인구수&#39;</span><span class="p">,</span> <span class="s1">&#39;고령자&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;김철수&#39;</span><span class="p">,</span><span class="s1">&#39;김미영&#39;</span><span class="p">,</span><span class="s1">&#39;이수지&#39;</span><span class="p">,</span><span class="s1">&#39;홍길동&#39;</span><span class="p">,</span><span class="s1">&#39;이철&#39;</span><span class="p">]</span>
+<span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;성별&#39;</span><span class="p">,</span><span class="s1">&#39;나이&#39;</span><span class="p">,</span><span class="s1">&#39;직업&#39;</span><span class="p">]</span>
+<span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;남&#39;</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s1">&#39;전문직&#39;</span><span class="p">],[</span><span class="s1">&#39;여&#39;</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="s1">&#39;기타&#39;</span><span class="p">],[</span><span class="s1">&#39;여&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;학생&#39;</span><span class="p">],[</span><span class="s1">&#39;남&#39;</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="s1">&#39;직장인&#39;</span><span class="p">],[</span><span class="s1">&#39;남&#39;</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="s1">&#39;자영업&#39;</span><span class="p">]]</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>성별</th>
+      <th>나이</th>
+      <th>직업</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>김철수</td>
+      <td>남</td>
+      <td>60</td>
+      <td>전문직</td>
+    </tr>
+    <tr>
+      <td>김미영</td>
+      <td>여</td>
+      <td>62</td>
+      <td>기타</td>
+    </tr>
+    <tr>
+      <td>이수지</td>
+      <td>여</td>
+      <td>20</td>
+      <td>학생</td>
+    </tr>
+    <tr>
+      <td>홍길동</td>
+      <td>남</td>
+      <td>32</td>
+      <td>직장인</td>
+    </tr>
+    <tr>
+      <td>이철</td>
+      <td>남</td>
+      <td>45</td>
+      <td>자영업</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="A_chapter8.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 8. numpy</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Series 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Series 연산</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-indexing-slicing">Series indexing &amp; slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-filtering">Series 비교연산과 filtering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">DataFrame 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">데이터 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-slicing">행/열 Indexing &amp; slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#df-iloc">df.iloc[]</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#df-loc">df.loc[]</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#df">df</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">행/열 추가, 삭제</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">연습문제</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By hs Byun
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
