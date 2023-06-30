@@ -93,8 +93,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'A_chapter3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -385,14 +383,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation">Indentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-source-code-2">Sample Source Code #2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">모듈과 모듈 불러오기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-source-code-3">Sample Source Code #3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">연습문제</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-bmi">Problem: BMI 계산 프로그램</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem: 합격, 불합격, 과락 판단</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">연습문제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">마무리</a></li>
 </ul>
             </nav>
@@ -408,7 +400,7 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-3">
 <h1>Chapter 3. 조건문<a class="headerlink" href="#chapter-3" title="Permalink to this headline">#</a></h1>
 <div class="info admonition">
-<p class="admonition-title">학습목표와 기대효과 </p>
+<p class="admonition-title">학습목표와 기대효과</p>
 <ul class="simple">
 <li><p>학습목표</p>
 <ul>
@@ -536,7 +528,7 @@ True
 </ul>
 <div class="info admonition">
 <p class="admonition-title">유니코드</p>
-<p>유니코드란 전 세계의 모든 문자를 컴퓨터에서 일관되게 표현하고 다룰 수 있도록 설계된 표준이다. 현재 전 세계의 모든 문자와 이모티콘까지 포함하여 1,114,112개의 코드값이 지정되었고, 이 가운데 한,중,일 한자가 97,058개로 약 87%를 차지한다.(23년 2월 기준)😲</p>
+<p>유니코드란 전 세계의 모든 문자를 컴퓨터에서 일관되게 표현하고 다룰 수 있도록 설계된 표준이다. 현재 전 세계의 모든 문자와 이모티콘까지 포함하여 1,114,112개의 코드값이 지정되었고, 이 가운데 한,중,일 한자가 97,058개를 차지한다.(23년 2월 기준)😲</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -564,22 +556,7 @@ False
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;서울대&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;고려대&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ㅅ&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;ㄱ&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;서&#39;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;서&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;고&#39;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;고&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;가&#39;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;가&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ㄱ&#39;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;ㄱ&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>
@@ -589,8 +566,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>서 49436
-고 44256
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>가 44032
 ㄱ 12593
 a 97
 A 65
@@ -618,7 +594,7 @@ A 65
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;123&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;93&#39;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;123&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;93&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -648,7 +624,7 @@ True
 <ul class="simple">
 <li><p>그러나 문자와 숫자간 대소(&gt;, &lt;, &gt;=, &lt;=)는 비교가 불가능하여 에러를 발생시킨다.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="o">&gt;</span><span class="s1">&#39;123&#39;</span><span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="o">&gt;</span><span class="s1">&#39;123&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
@@ -804,7 +780,9 @@ False
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -820,49 +798,6 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">여러개의 논리 연산자 표현시  주의</p>
-<p>국어(kor), 수학(mat), 컴기(com) 점수가 80점 이상이거나를 코드로 표현할 때
-<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">kor</span> <span class="pre">or</span> <span class="pre">mat</span> <span class="pre">or</span> <span class="pre">com</span> <span class="pre">&gt;=</span> <span class="pre">80:</span></code> 이와 같이 표현하면 안된다. 0을 제외한 모든 값은 True이므로 이 비교식은 항상 True가 된다.</p>
-<p><font color='red'> 잘못된 표현식</font></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kor</span> <span class="o">=</span> <span class="mi">70</span>
-<span class="n">mat</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="n">com</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="k">if</span> <span class="n">kor</span> <span class="ow">or</span> <span class="n">mat</span> <span class="ow">or</span> <span class="n">com</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><font color='red'> 올바른 표현식</font></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kor</span> <span class="o">=</span> <span class="mi">70</span>
-<span class="n">mat</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="n">com</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">kor</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">mat</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">com</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">):</span>
-  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kor</span> <span class="o">=</span> <span class="mi">70</span>
-<span class="n">mat</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="n">com</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">kor</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">mat</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">com</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">):</span>
-  <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -891,7 +826,7 @@ True
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">10</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">7</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span> <span class="ow">or</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span> <span class="ow">or</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -909,12 +844,15 @@ True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">10</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="k">2</span> != 0 and muyaho == 0)
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="k">2</span> != 0 and muyaho == 0)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -947,28 +885,7 @@ True
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제. 입력받은 점수가 80점 이상이면 ‘Pass!’를 출력하는 코드를 작성하세요.</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>점수: 90
-Pass!
-</pre></div>
-</div>
-<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">점수</span><span class="p">:</span> <span class="mi">70</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>😄문제</p>
 </div>
 <div class="section" id="if-else">
 <h3>if ~ else 문<a class="headerlink" href="#if-else" title="Permalink to this headline">#</a></h3>
@@ -990,7 +907,9 @@ Pass!
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Homerun!
-Happy
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Happy
 </pre></div>
 </div>
 </div>
@@ -1008,7 +927,7 @@ Happy
 <span class="k">if</span> <span class="n">query</span><span class="o">&gt;</span><span class="n">a</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;가장 큰 수 이다.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-  <span class="k">if</span> <span class="n">query</span><span class="o">&gt;</span><span class="n">b</span><span class="p">:</span>  
+  <span class="k">if</span> <span class="n">query</span><span class="o">&gt;</span><span class="n">b</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;두 번째로 큰 수 이다.&quot;</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">query</span><span class="o">&gt;</span><span class="n">c</span><span class="p">:</span>
@@ -1020,9 +939,6 @@ Happy
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>세 번째로 큰 수 이다.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1062,69 +978,7 @@ End
 </div>
 </div>
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제. 변수 number와 같은 수, 큰 수, 작은 수를 출력하고 싶었다. 무엇이 문제인지 찾아보시오.</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">75</span>
-<span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">75</span><span class="p">:</span>
-  <span class="nb">print</span> <span class="p">(</span> <span class="s1">&#39;같다.&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">75</span><span class="p">:</span>
-  <span class="nb">print</span> <span class="p">(</span> <span class="s1">&#39;크다.&#39;</span><span class="p">)</span>   
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;작다.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄문제. 눈으로 살펴보고 Case-1과 Case-2의 결과가 어떻게 나올지 예상해보세요.</p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">75</span>
-<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A입니다. &#39;</span> <span class="p">)</span>
-<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;B입니다.&#39;</span> <span class="p">)</span>
-<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;C입니다.&#39;</span> <span class="p">)</span>
-<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;D입니다.&#39;</span> <span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;F입니다.&#39;</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p class="sd-card-text"><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">75</span>
-<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A입니다. &#39;</span> <span class="p">)</span>
-<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;B입니다.&#39;</span> <span class="p">)</span>
-<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;C입니다.&#39;</span> <span class="p">)</span>
-<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;D입니다.&#39;</span> <span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;F입니다.&#39;</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>😄문제</p>
 </div>
 </div>
 <div class="section" id="indentation">
@@ -1140,10 +994,10 @@ End
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">90</span>
 <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
-  <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;합격입니다.&#39;</span><span class="p">)</span> 
+  <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;합격입니다.&#39;</span><span class="p">)</span>
  <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A 등급입니다.&#39;</span><span class="p">)</span>  
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;장학금도 받을 수 있습니다.&#39;</span><span class="p">)</span>      
-  <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;효도하시는군요!&#39;</span><span class="p">)</span> 
+  <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;효도하시는군요!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1156,7 +1010,7 @@ End
   <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;합격입니다.&#39;</span><span class="p">)</span>
   <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A 등급입니다.&#39;</span><span class="p">)</span>
   <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;장학금도 받을 수 있습니다.&#39;</span><span class="p">)</span>
-  <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;효도하시는군요!&#39;</span><span class="p">)</span> 
+  <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;효도하시는군요!&#39;</span><span class="p">)</span>
 <span class="k">else</span> <span class="p">:</span>
        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;다음학기를 노려보세요.&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1166,13 +1020,16 @@ End
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>다음학기를 노려보세요.
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <ul class="simple">
 <li><p>블럭에 들어가야 할 코드가 한줄도 없는 경우에도 Indentation error가 발생한다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
- 
+
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;다음학기를 노려보세요.&#39;</span><span class="p">)</span>    
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">)</span>
@@ -1192,7 +1049,7 @@ End
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
   <span class="k">pass</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;다음학기를 노려보세요.&#39;</span><span class="p">)</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;다음학기를 노려보세요.&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1203,40 +1060,6 @@ End
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="sample-source-code-2">
-<h2>Sample Source Code #2<a class="headerlink" href="#sample-source-code-2" title="Permalink to this headline">#</a></h2>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄 다음 코드를 아래의 세가지 조건으로 실행되도록 비교파트를 수정해보세요.</p>
-</div>
-<div class="sd-card-body docutils">
-<ul class="simple">
-<li><p class="sd-card-text">(조건1) guess가 number보다 크면 ‘Your guess is high.’</p></li>
-<li><p class="sd-card-text">(조건2) guess가 number보다 작으면 ‘Your guess is low.’</p></li>
-<li><p class="sd-card-text">(조건3) guess와 number가 같으면 지금 메시지 그대로</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a guess the number game.</span>
-<span class="n">myName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Hello! What is your name?&#39;</span><span class="p">)</span>
-<span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s1">&#39;Well, &#39;</span> <span class="o">+</span> <span class="n">myName</span> <span class="o">+</span> <span class="s1">&#39;, I am thinking of a number between 1 and 20.&#39;</span><span class="p">)</span>
-
-<span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Take a guess.&#39;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
- <span class="nb">print</span> <span class="p">(</span> <span class="s1">&#39;Your guess is wrong.&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
- <span class="nb">print</span> <span class="p">(</span> <span class="s1">&#39;Good job, &#39;</span> <span class="o">+</span> <span class="n">myName</span> <span class="o">+</span> <span class="s1">&#39;! You guessed my number!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1292,147 +1115,15 @@ End
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>79
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>아래의 코드는 에러가 발생한다. 그 이유를 생각해보자.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span> <span class="p">)</span>
-<span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sample-source-code-3">
-<h2>Sample Source Code #3<a class="headerlink" href="#sample-source-code-3" title="Permalink to this headline">#</a></h2>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header bg-light docutils">
-<p class="sd-card-text">😄 number의 값을 랜덤수로 수정하세요.</p>
-</div>
-<div class="sd-card-body docutils">
-<ul class="simple">
-<li><p class="sd-card-text">TODO-1: number = 5 대신에 1부터 20 사이의 랜덤 수를 number에 저장하세요.</p></li>
-<li><p class="sd-card-text">TODO-2: Sample Source Code #2에서 여러분이 작성한 비교파트 코드를 #TODO-2 아래에 넣어주세요.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a guess the number game.</span>
-<span class="n">myName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Hello! What is your name?&#39;</span><span class="p">)</span>
-<span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span> <span class="p">(</span> <span class="s1">&#39;Well, &#39;</span> <span class="o">+</span> <span class="n">myName</span> <span class="o">+</span> <span class="s1">&#39;, I am thinking of a number between 1 and 20.&#39;</span><span class="p">)</span>
-
-<span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Take a guess.&#39;</span><span class="p">))</span>
-
-<span class="c1"># TODO-2</span>
-
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>😄 문제</p>
 </div>
 <div class="section" id="id6">
 <h2>연습문제<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
-<div class="section" id="problem-bmi">
-<h3>Problem: BMI 계산 프로그램<a class="headerlink" href="#problem-bmi" title="Permalink to this headline">#</a></h3>
-<p>😄신장(cm)과 체중(kg)을 입력 받아 아래 BMI(신체질량지수) 공식을 이용하여 BMI를 계산하는 프로그램을 작성하시오. BMI가 25이상이면 비만입니다. * 단위에 주의하세요.</p>
-<hr class="docutils" />
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span><span class="p">(</span><span class="n">kg</span><span class="p">)</span>
-<span class="n">height</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-
-</pre></div>
-</div>
-<p><span class="math notranslate nohighlight">\( BMI = weight / height^2 \)</span></p>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
-<p>Input Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">160</span>
-<span class="mf">65.2</span>
-</pre></div>
-</div>
-<p>Output Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">신장</span><span class="p">(</span><span class="n">cm</span><span class="p">):</span> 
-<span class="n">체중</span><span class="p">(</span><span class="n">kg</span><span class="p">):</span> 
-<span class="n">BMI는</span> <span class="mf">25.47</span>
-<span class="n">비만입니다</span><span class="o">.</span> <span class="n">운동으로</span> <span class="n">감량이</span> <span class="n">필요합니다</span><span class="o">.</span>
-</pre></div>
-</div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
-<p>Input Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">170</span>
-<span class="mf">55.3</span>
-</pre></div>
-</div>
-<p>Output Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">신장</span><span class="p">(</span><span class="n">cm</span><span class="p">):</span> 
-<span class="n">체중</span><span class="p">(</span><span class="n">kg</span><span class="p">):</span> 
-<span class="n">BMI는</span> <span class="mf">19.13</span>
-<span class="n">정상입니다</span><span class="o">.</span> <span class="n">꾸준한</span> <span class="n">운동으로</span> <span class="n">유지시켜주세요</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="problem">
-<h3>Problem: 합격, 불합격, 과락 판단<a class="headerlink" href="#problem" title="Permalink to this headline">#</a></h3>
-<p>😄이름과 국어, 수학, 컴퓨팅기초 점수(정수) 세 개를 입력받아 다음 조건에 따라 결과를 출력하는 프로그램을 작성하시오.</p>
-<ul class="simple">
-<li><p>합격: 평균이 60점 이상이고 모두 40점 이상</p></li>
-<li><p>과락: 평균이 60점 이상이나 40점 미만 과목이 있음</p></li>
-<li><p>불합격: 평균이 60점 미만</p></li>
-</ul>
-<hr class="docutils" />
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-1</span></code></font></p>
-<p>Input Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">홍길동</span>
-<span class="mi">87</span>
-<span class="mi">37</span>
-<span class="mi">77</span>
-</pre></div>
-</div>
-<p>Output Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">이름</span><span class="p">:</span> 
-<span class="n">국어</span><span class="p">:</span> 
-<span class="n">수학</span><span class="p">:</span> 
-<span class="n">컴기</span><span class="p">:</span> 
-<span class="n">홍길동님은</span> <span class="n">과락입니다</span><span class="o">.</span>
-</pre></div>
-</div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-2</span></code></font></p>
-<p>Input Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">홍길동</span>
-<span class="mi">87</span>
-<span class="mi">57</span>
-<span class="mi">77</span>
-</pre></div>
-</div>
-<p>Output Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">이름</span><span class="p">:</span> 
-<span class="n">국어</span><span class="p">:</span> 
-<span class="n">수학</span><span class="p">:</span> 
-<span class="n">컴기</span><span class="p">:</span> 
-<span class="n">홍길동님은</span> <span class="n">합격입니다</span><span class="o">.</span>
-</pre></div>
-</div>
-<p><font color='blue'><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case-3</span></code></font></p>
-<p>Input Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">홍길동</span>
-<span class="mi">62</span>
-<span class="mi">37</span>
-<span class="mi">68</span>
-</pre></div>
-</div>
-<p>Output Sample</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">이름</span><span class="p">:</span> 
-<span class="n">국어</span><span class="p">:</span> 
-<span class="n">수학</span><span class="p">:</span> 
-<span class="n">컴기</span><span class="p">:</span> 
-<span class="n">홍길동님은</span> <span class="n">불합격입니다</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="id7">
 <h2>마무리<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
@@ -1523,14 +1214,8 @@ End
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation">Indentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-source-code-2">Sample Source Code #2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">모듈과 모듈 불러오기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-source-code-3">Sample Source Code #3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">연습문제</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-bmi">Problem: BMI 계산 프로그램</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem: 합격, 불합격, 과락 판단</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">연습문제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">마무리</a></li>
 </ul>
   </nav></div>
