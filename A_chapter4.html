@@ -194,6 +194,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="A_chapter7.html">Chapter 7. 함수</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter8.html">Chapter 8. numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter9.html">Chapter 9. pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter10.html">Chapter 10. 시각화</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter11.html">Chapter 11. 인공지능의 이해</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter12.html">Chapter 12. scikit-learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter13.html">Chapter 12. 음성인식</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter14.html">Chapter 14. 컴퓨터 비젼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter15.html">Chapter 15. 자연어처리</a></li>
 </ul>
 
     </div>
@@ -375,7 +381,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-statement">while statement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break">break</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-else">while ~ else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">while 중첩문</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a><ul class="nav section-nav flex-column">
@@ -541,33 +546,6 @@ count=5
 </pre></div>
 </div>
 <p>😄 문제</p>
-</div>
-<div class="section" id="while">
-<h3>while 중첩문<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h3>
-<p>중첩 while문은 while문 안에 다른 while문이 들어 있는 것을 말한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">out</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">:</span>
-  <span class="n">in_num</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="k">while</span> <span class="n">in_num</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;🍩&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="n">in_num</span> <span class="o">+=</span> <span class="mi">1</span>
-  <span class="nb">print</span><span class="p">()</span>
-  <span class="n">out</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🍩🍩🍩
-🍩🍩🍩
-🍩🍩🍩
-🍩🍩🍩
-🍩🍩🍩
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="for-loop">
@@ -894,9 +872,7 @@ END
 6*1=6
 6*2=12
 6*3=18
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6*4=24
+6*4=24
 6*5=30
 6*6=36
 6*7=42
@@ -1022,7 +998,6 @@ END
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-statement">while statement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break">break</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-else">while ~ else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">while 중첩문</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a><ul class="nav section-nav flex-column">

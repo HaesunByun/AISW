@@ -194,6 +194,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="A_chapter7.html">Chapter 7. 함수</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter8.html">Chapter 8. numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter9.html">Chapter 9. pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter10.html">Chapter 10. 시각화</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter11.html">Chapter 11. 인공지능의 이해</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter12.html">Chapter 12. scikit-learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter13.html">Chapter 12. 음성인식</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter14.html">Chapter 14. 컴퓨터 비젼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter15.html">Chapter 15. 자연어처리</a></li>
 </ul>
 
     </div>
@@ -389,7 +395,7 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-6">
 <h1>Chapter 6. 딕셔너리<a class="headerlink" href="#chapter-6" title="Permalink to this headline">#</a></h1>
 <div class="info admonition">
-<p class="admonition-title">학습목표와 기대효과 </p>
+<p class="admonition-title">학습목표와 기대효과</p>
 <ul class="simple">
 <li><p>학습목표</p>
 <ul>
@@ -425,8 +431,8 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Byun&#39;</span><span class="p">,</span> <span class="s1">&#39;phone&#39;</span><span class="p">:</span><span class="s1">&#39;010-111-2222&#39;</span><span class="p">,</span> <span class="s1">&#39;birth&#39;</span><span class="p">:</span> <span class="s1">&#39;09/08&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
 <span class="n">dict2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;L0444.000400&#39;</span><span class="p">,</span> <span class="s1">&#39;컴퓨팅기초&#39;</span> <span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L0444.000500&#39;</span><span class="p">,</span> <span class="s1">&#39;컴퓨팅핵심&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L0444.000600&#39;</span><span class="p">,</span> <span class="s1">&#39;컴퓨팅응용&#39;</span><span class="p">)])</span>
-<span class="n">dict3</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span> 
-<span class="n">dict4</span> <span class="o">=</span> <span class="p">{}</span>  
+<span class="n">dict3</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">dict4</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>
@@ -471,7 +477,7 @@ document.write(`
 <ul class="simple">
 <li><p>당연한 말이지만 value에 접근할 때 key가 딕셔너리에 없으면 에러가 난다.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -485,9 +491,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sports</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;걷기&#39;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;조깅&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;수영&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span> <span class="c1">#생성</span>
-<span class="n">sports</span><span class="p">[</span><span class="s1">&#39;계단오르기&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>  
+<span class="n">sports</span><span class="p">[</span><span class="s1">&#39;계단오르기&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sports</span><span class="p">)</span>
-<span class="n">sports</span><span class="p">[</span><span class="s1">&#39;계단오르기&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span> 
+<span class="n">sports</span><span class="p">[</span><span class="s1">&#39;계단오르기&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sports</span><span class="p">)</span>
 </pre></div>
 </div>
