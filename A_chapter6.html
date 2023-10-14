@@ -381,6 +381,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-value">key를 통한 value 접근(활용)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insertion-and-modification">Insertion and modification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">딕셔너리 주요 메서드와 iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">마무리</a></li>
 </ul>
             </nav>
         </div>
@@ -424,26 +425,22 @@ document.write(`
 <h2>딕셔너리 생성<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>중괄호 { }안에 key:value 쌍을 콤마로 나열하여 직접 생성할 수 있다.</p></li>
-<li><p>또한 dict() 함수안에 (key, value) 쌍을 순서적으로 넣어 생성할 수 있다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">dict()</span></code>나 <code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">{}</span></code>와 같이 쓰면 비어있는 딕셔너리를 생성한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Byun&#39;</span><span class="p">,</span> <span class="s1">&#39;phone&#39;</span><span class="p">:</span><span class="s1">&#39;010-111-2222&#39;</span><span class="p">,</span> <span class="s1">&#39;birth&#39;</span><span class="p">:</span> <span class="s1">&#39;09/08&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
-<span class="n">dict2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;L0444.000400&#39;</span><span class="p">,</span> <span class="s1">&#39;컴퓨팅기초&#39;</span> <span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L0444.000500&#39;</span><span class="p">,</span> <span class="s1">&#39;컴퓨팅핵심&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;L0444.000600&#39;</span><span class="p">,</span> <span class="s1">&#39;컴퓨팅응용&#39;</span><span class="p">)])</span>
-<span class="n">dict3</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="n">dict4</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">dict3</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dict3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dict4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Byun&#39;, &#39;phone&#39;: &#39;010-111-2222&#39;, &#39;birth&#39;: &#39;09/08&#39;, &#39;data&#39;: [1, 2, 3]}
-{&#39;L0444.000400&#39;: &#39;컴퓨팅기초&#39;, &#39;L0444.000500&#39;: &#39;컴퓨팅핵심&#39;, &#39;L0444.000600&#39;: &#39;컴퓨팅응용&#39;}
 {}
 {}
 </pre></div>
@@ -454,7 +451,7 @@ document.write(`
 <div class="section" id="key-value">
 <h2>key를 통한 value 접근(활용)<a class="headerlink" href="#key-value" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>딕셔너리의 value에 접근하기 위해서는 딕셔너리변수명[key]를 이용한다.</p></li>
+<li><p>딕셔너리의 value에 접근하기 위해서는 <code class="docutils literal notranslate"><span class="pre">딕셔너리변수명[key]</span></code>를 이용한다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -601,8 +598,8 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sports</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">sports</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">each</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -744,6 +741,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="section" id="id2">
+<h2>마무리<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>딕셔너리는 key와 value가 쌍(pair)으로 이루어진 자료구조이며, 중괄호 { }로 묶는다.</p></li>
+<li><p>딕셔너리의 key로는 숫자, 문자열, 튜플(숫자,문자열,튜플만 원소로 갖고 있는) 등 불변(immutable) 데이터 타입만 사용할 수 있다.</p></li>
+<li><p>딕셔너리의 value에는 숫자, 문자열, 리스트, 튜플, 집합, 딕셔너리까지 다양한 자료형이 들어갈 수 있다.</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -811,6 +816,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-value">key를 통한 value 접근(활용)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insertion-and-modification">Insertion and modification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">딕셔너리 주요 메서드와 iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">마무리</a></li>
 </ul>
   </nav></div>
 
