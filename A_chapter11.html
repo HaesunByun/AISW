@@ -197,8 +197,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="A_chapter10.html">Chapter 10. 시각화</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 11. 인공지능의 이해</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter12.html">Chapter 12. scikit-learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="A_chapter13.html">Chapter 12. 음성인식</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter13.html">Chapter 13. 음성인식</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter14.html">Chapter 14. 컴퓨터 비젼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter15.html">Chapter 15. 자연어처리</a></li>
 </ul>
 
     </div>
@@ -388,15 +389,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2000년 이후</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">머신러닝 체험해보기</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickdraw">QuickDraw</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">목소리 흉내</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">머신러닝 분류</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">머신러닝 용어</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">머신러닝을 위한 주요 패키지</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">마무리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">마무리</a></li>
 </ul>
             </nav>
         </div>
@@ -428,7 +421,7 @@ document.write(`
 </div>
 <div class="section" id="id1">
 <h2>인공지능<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>인공지능, 머신러닝, 딥러닝과 같은 기술들이 여러분들의 일상생활에 밀접하게 다가와 있다는 것을 느낄 것이다. 인공지능 분야를 여러분의 전공과 접목시키기 위해서는 인공지능이 무엇인지 먼저 알아야 한다.</p>
+<p>인공지능, 머신러닝, 딥러닝과 같은 기술들이 여러분들의 일상생활에 밀접하게 다가와 있다는 것을 느낄 것이다. 인공지능 분야를 여러분의 업무에 적용시키기 위해서는 인공지능이 무엇인지 먼저 알아야 한다.</p>
 <p>인공지능을 이해하기 위해서는 먼저 지능이 무엇인지 생각해보자. 지능은 무엇일까?</p>
 <p><strong>지능</strong>이란</p>
 <ul class="simple">
@@ -555,71 +548,13 @@ document.write(`
 <p>2011년 IBM의 왓슨이 퀴즈쇼에서 우승을 차지하게 되었다.</p>
 <p>2011~2014년 시리나 나우같은 음성인식 개인 비서가 등장하였다.</p>
 <p>2016년 구글의 인공지능 바둑 프로그램인 알파고(AlphaGo)가 이세돌과의 경기에서 4-1로 승리하게 되었다.</p>
-<p>지금의 인공지능은 규칙기반 인공지능, 신경망(Neural Network) 기반 인공지능, 통계적 인공지능이 융합되어서 이루어지고 있다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai1.png" width=600, height=450></div><p>지금의 인공지능은 규칙기반 인공지능, 신경망(Neural Network) 기반 인공지능, 통계적 인공지능이 융합되어서 이루어지고 있다.</p>
 <p>인공지능을 분류해보면 아래 그림과 같다.</p>
 <div align="center"><img src="https://haesunbyun.github.io/common/images/ai6.png"></div>
 </div>
 </div>
 <div class="section" id="id9">
-<h2>머신러닝 체험해보기<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
-<p>머신러닝이란 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야이다.</p>
-<div class="section" id="quickdraw">
-<h3>QuickDraw<a class="headerlink" href="#quickdraw" title="Permalink to this headline">#</a></h3>
-<p>신경망이 제시된 단어에 부합하는 그림을 제대로 그렸는지를 판정하는 프로그램이다.
-시작하기를 누르고 제시된 그림을 마우스로 그리면 되는데, 각 20초 안에 제시되는 6개 단어에 해당하는 그림을 그리면, 신경망은 계속해서 그린 그림에 대한 단어 맞추기를 시도한다.
-<a class="reference external" href="https://quickdraw.withgoogle.com/">https://quickdraw.withgoogle.com/</a></p>
-</div>
-<div class="section" id="id10">
-<h3>목소리 흉내<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<p>텐서플로로 구현된 신경망이 특정화자 목소리를 흉내내어 문장을 읽어준다. 손**의 목소리를 15시간 이상 학습하여 흉내낸다.
-<a class="reference external" href="https://carpedm20.github.io/tacotron/">https://carpedm20.github.io/tacotron/</a></p>
-</div>
-</div>
-<div class="section" id="id11">
-<h2>머신러닝 분류<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
-<p>머신러닝의 분류는 학습하는 동안의 감독 형태나 정보량에 따라 다음과 같이 세가지로 나뉜다.</p>
-<ul class="simple">
-<li><p>지도 학습(Supervised learning): 트레이닝 데이터에 답(레이블)이 포함되어 있는 것이다.</p>
-<ul>
-<li><p>분류</p></li>
-<li><p>회귀</p></li>
-<li><p>추천시스템</p></li>
-<li><p>시각/음성 감지/인지</p></li>
-<li><p>텍스트 분석, NLP</p></li>
-</ul>
-</li>
-<li><p>비지도 학습(Unsupervised learning): 트레이닝 데이터에 답이 없는 것</p>
-<ul>
-<li><p>클러스터링</p></li>
-<li><p>차원 축소</p></li>
-</ul>
-</li>
-<li><p>강화학습(Reinforcement learning): 현재의 상태(State)에서 어떤 행동(Action)을 취하는 것이 최적인지를 경험을 통해 학습</p></li>
-</ul>
-</div>
-<div class="section" id="id12">
-<h2>머신러닝 용어<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
-<p>머신러닝은 항상 입력을 받아서 출력하는 함수 y=f(x)를 학습한다고 생각할 수 있다.</p>
-<ul class="simple">
-<li><p>features(특징): 학습모델에게 제공하는 입력값으로 y=f(x)에서 x에 해당한다.</p></li>
-<li><p>labels(레이블): y = f(X)에서 y에 해당한다.</p></li>
-<li><p>samples(샘플) 또는 examples(예제): 샘플은 머신러닝에 주어지는 특정한 예이다. 레이블이 있는 샘플은 (x,y)와 같이 x,y가 모두 주어지며, 레이블이 없는 샘플은 (x, ?)와 같이 x만 준 후 레이블이 있는 예를 통해 y를 예측한다.</p></li>
-<li><p>model(모델): 특징과 레이블의 관계를 정의하는 것을 의미한다.</p></li>
-<li><p>학습(training) : 모델을 만들거나 배우는 것을 의미한다.</p></li>
-<li><p>예측(prediction), Inference(추론) : 학습된 모델을 레이블이 없는 샘플에 적용하는 것을 의미한다. 즉 학습된 모델을 사용하여 유용한 예측(y’)을 해내는 것을 말한다.</p></li>
-</ul>
-</div>
-<div class="section" id="id13">
-<h2>머신러닝을 위한 주요 패키지<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Scikit-Learn(사이킷 런): 2007년 구글에 개발한 라이브러리로, 현재 파이썬으로 구현된 라이브러리 중에서 머신러닝 교육 및 실무용으로 가장 많이 사용되고 있는 오픈소스 라이브러리이다. 회귀, 분류, 군집 등 실무에서 적용하는 대부분의 머신러닝 모형을 제공한다. <a class="reference external" href="https://pypi.org/project/scikit-learn/">https://pypi.org/project/scikit-learn/</a></p></li>
-<li><p>Numpy(넘파이): 머신러닝의 이론적 백그라운드는 선형대수와 통계이다. 넘파이는 이러한 선형대수, 통계, 행렬을 다루는 패키지로서, 사이킷 런을 비롯한 많은 머신러닝 패키지가 넘파이 기반으로 되어 있다.</p></li>
-<li><p>Pandas(판다스): 대표적인 데이터 처리 패키지로 2차원 일반 데이터에 특화되어 있는 패키지다.(넘파이는 수치데이터에 특화되어 있으므로 문자와 같은 일반데이터를 처리하기에는 불편한 부분이 많다.)</p></li>
-<li><p>matplotlib, seaborn: 시각화를 위한 패키지이다.</p></li>
-</ul>
-</div>
-<div class="section" id="id14">
-<h2>마무리<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<h2>마무리<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>인공지능의 개념을 이해해보고 역사를 살펴보았다.</p></li>
 </ul>
@@ -699,15 +634,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2000년 이후</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">머신러닝 체험해보기</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickdraw">QuickDraw</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">목소리 흉내</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">머신러닝 분류</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">머신러닝 용어</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">머신러닝을 위한 주요 패키지</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">마무리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">마무리</a></li>
 </ul>
   </nav></div>
 

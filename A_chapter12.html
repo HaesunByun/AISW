@@ -98,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'A_chapter12';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chapter 12. 음성인식" href="A_chapter13.html" />
+    <link rel="next" title="Chapter 13. 음성인식" href="A_chapter13.html" />
     <link rel="prev" title="Chapter 11. 인공지능의 이해" href="A_chapter11.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -199,8 +199,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="A_chapter10.html">Chapter 10. 시각화</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter11.html">Chapter 11. 인공지능의 이해</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 12. scikit-learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="A_chapter13.html">Chapter 12. 음성인식</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter13.html">Chapter 13. 음성인식</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_chapter14.html">Chapter 14. 컴퓨터 비젼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_chapter15.html">Chapter 15. 자연어처리</a></li>
 </ul>
 
     </div>
@@ -378,22 +379,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">Scikit-Learn(사이킷 런)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">머신러닝</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickdraw">머신러닝 체험해보기: QuickDraw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">머신러닝 체험해보기: 목소리 흉내</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">머신러닝 용어</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">머신러닝 분류</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">머신러닝을 위한 주요 패키지</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">Scikit-Learn(사이킷 런)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">scikit-learn 주요 모듈</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iris">예제: 붓꽃(iris) 품종 예측하기</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">데이타 확인 및 파악</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">데이타 확인 및 파악</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-set-test-set">train set과 test set으로 분리</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nn">k-NN(최근접 이웃) 예측모델 적용</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem: 선형회귀 모델</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">데이터 확인</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">모델 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nn">k-NN(최근접 이웃) 분류모델</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">모델 생성</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-clustering">Problem: 군집(clustering) 모델</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">선형회귀 모델</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">모델 생성</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">군집(clustering) 모델</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">마무리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">마무리</a></li>
 </ul>
             </nav>
         </div>
@@ -412,56 +424,305 @@ document.write(`
 <ul class="simple">
 <li><p>학습목표</p>
 <ul>
-<li><p>인</p></li>
+<li><p>머신러닝의 개념과 머신러닝 라이브러리인 scikit-learn을 익혀본다.</p></li>
+<li><p>붓꽃 예제를 통해 scikit-learn을 다뤄본다.</p></li>
 </ul>
 </li>
 <li><p>기대효과</p>
 <ul>
-<li><p>인</p></li>
+<li><p>몇 가지 머신러닝 모형을 다뤄보고 기본 개념을 익힐 수 있다.</p></li>
 </ul>
 </li>
 </ul>
 </div>
+<div class="section" id="id1">
+<h2>머신러닝<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>우리가 컴퓨터에게 어떤 작업을 시키려면 반드시 프로그램을 작성하여 작업을 지시하여야 한다.
+컴퓨터가 스스로 학습할 수 있다면 컴퓨터는 프로그램 없이도(혹은 최소한의 프로그램으로) 여러 가지 일을 할 수 있을 것이다.
+머신러닝이란 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야이다.</p>
+<ul class="simple">
+<li><p>머신러닝 기술은 다양한 분야에 적용해 볼 수 있다.</p></li>
+</ul>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/AI10.png" width=500></div><div class="section" id="quickdraw">
+<h3>머신러닝 체험해보기: QuickDraw<a class="headerlink" href="#quickdraw" title="Permalink to this headline">#</a></h3>
+<p>신경망이 제시된 단어에 부합하는 그림을 제대로 그렸는지를 판정하는 프로그램이다.
+시작하기를 누르고 제시된 그림을 마우스로 그리면 되는데, 각 20초 안에 제시되는 6개 단어에 해당하는 그림을 그리면, 신경망은 계속해서 그린 그림에 대한 단어 맞추기를 시도한다.
+<a class="reference external" href="https://quickdraw.withgoogle.com/">https://quickdraw.withgoogle.com/</a></p>
+</div>
+<div class="section" id="id2">
+<h3>머신러닝 체험해보기: 목소리 흉내<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>텐서플로로 구현된 신경망이 특정화자 목소리를 흉내내어 문장을 읽어준다. 손**의 목소리를 15시간 이상 학습하여 흉내낸다.
+<a class="reference external" href="https://carpedm20.github.io/tacotron/">https://carpedm20.github.io/tacotron/</a></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>머신러닝 용어<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>머신러닝은 항상 입력을 받아서 출력하는 함수 y=f(x)를 학습한다고 생각할 수 있다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/AI12.png" width=600></div>
+<ul class="simple">
+<li><p>features(특징): 학습모델에게 제공하는 입력값으로 y=f(x)에서 x에 해당한다.</p></li>
+<li><p>labels(레이블): y = f(X)에서 y에 해당한다. 농작물의 향후 가격, 사진에 표시되는 동물의 종류, 동영상의 의미 등 무엇이든지 레이블이 될 수 있다.</p></li>
+<li><p>samples(샘플) 또는 examples(예제): 샘플은 머신러닝에 주어지는 특정한 예이다. 레이블이 있는 샘플은 (x,y)와 같이 x,y가 모두 주어지며, 레이블이 없는 샘플은 (x, ?)와 같이 x만 준 후 레이블이 있는 예를 통해 y를 예측한다.</p></li>
+<li><p>model(모델): 특징과 레이블의 관계를 정의하는 것을 의미한다.</p></li>
+<li><p>학습(training) : 모델을 만들거나 배우는 것을 의미한다.</p></li>
+<li><p>예측(prediction), Inference(추론) : 학습된 모델을 레이블이 없는 샘플에 적용하는 것을 의미한다. 즉 학습된 모델을 사용하여 유용한 예측(y’)을 해내는 것을 말한다.</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>머신러닝 분류<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>머신러닝의 분류는 학습하는 동안의 감독 형태나 정보량에 따라 다음과 같이 세가지로 나뉜다.</p>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/AI11.png" width=600></div>
+<ul class="simple">
+<li><p>지도 학습(Supervised learning): 트레이닝 데이터에 답(레이블)이 포함되어 있는 것이다.</p>
+<ul>
+<li><p>분류</p></li>
+<li><p>회귀</p></li>
+<li><p>추천시스템</p></li>
+<li><p>시각/음성 감지/인지</p></li>
+<li><p>텍스트 분석, NLP</p></li>
+</ul>
+</li>
+<li><p>비지도 학습(Unsupervised learning): 트레이닝 데이터에 답이 없는 것</p>
+<ul>
+<li><p>클러스터링</p></li>
+<li><p>차원 축소</p></li>
+</ul>
+</li>
+<li><p>강화학습(Reinforcement learning): 현재의 상태(State)에서 어떤 행동(Action)을 취하는 것이 최적인지를 경험을 통해 학습</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>머신러닝을 위한 주요 패키지<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Scikit-Learn(사이킷 런): 2007년 구글에 개발한 라이브러리로, 현재 파이썬으로 구현된 라이브러리 중에서 머신러닝 교육 및 실무용으로 가장 많이 사용되고 있는 오픈소스 라이브러리이다. 회귀, 분류, 군집 등 실무에서 적용하는 대부분의 머신러닝 모형을 제공한다. <a class="reference external" href="https://pypi.org/project/scikit-learn/">https://pypi.org/project/scikit-learn/</a></p></li>
+<li><p>Numpy(넘파이): 머신러닝의 이론적 백그라운드는 선형대수와 통계이다. 넘파이는 이러한 선형대수, 통계, 행렬을 다루는 패키지로서, 사이킷 런을 비롯한 많은 머신러닝 패키지가 넘파이 기반으로 되어 있다.</p></li>
+<li><p>Pandas(판다스): 대표적인 데이터 처리 패키지로 2차원 일반 데이터에 특화되어 있는 패키지다.(넘파이는 수치데이터에 특화되어 있으므로 문자와 같은 일반데이터를 처리하기에는 불편한 부분이 많다.)</p></li>
+<li><p>matplotlib, seaborn: 시각화를 위한 패키지이다.</p></li>
+</ul>
+</div>
 <div class="section" id="scikit-learn">
 <h2>Scikit-Learn(사이킷 런)<a class="headerlink" href="#scikit-learn" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id6">
+<h3>scikit-learn 주요 모듈<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>2007년 구글에 개발한 라이브러리로, 현재 파이썬으로 구현된 라이브러리 중에서 머신러닝 교육 및 실무용으로 가장 많이 사용되고 있는 오픈소스 라이브러리이다. 회귀, 분류, 군집 등 실무에서 적용하는 대부분의 머신러닝 모형을 제공한다. <a class="reference external" href="https://pypi.org/project/scikit-learn/">https://pypi.org/project/scikit-learn/</a></p></li>
+<li><p>예제 데이터</p>
+<ul>
+<li><p>sklearn.datasets: scikit-learn에 내장되어 제공되는 예제 데이터 셋</p></li>
 </ul>
+</li>
+<li><p>feature processing</p>
+<ul>
+<li><p>sklearn.preprocessing: 데이터 전처리에 필요한 다양한 기능을 제공하는 모듈(인코딩, 정규화, 스케일링 등)</p></li>
+<li><p>sklearn.feature_selection: 알고리즘에 영향을 미치는 특징을 우선순위대로 선택작업을 수행하는 다양한 기능을 제공하는 모듈</p></li>
+</ul>
+</li>
+<li><p>데이터 분리, 검증/파리미터 튜닝</p>
+<ul>
+<li><p>sklearn.model_selection: 교차 검증을 위한 학습용/테스트용 데이터 분리 등의 API 제공</p></li>
+</ul>
+</li>
+<li><p>평가</p>
+<ul>
+<li><p>sklearn.metrics: 분류, 회귀, 클러스터링, 페어와이즈에 대한 다양한 성능 측정 방법 제공</p></li>
+</ul>
+</li>
+<li><p>머신러닝 알고리즘</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>: 앙상블 알고리즘 제공(랜덤포레스트, 에이다 부스트, 그래디언트 부스팅 등)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code>: 선형 회귀, 릿지(Ridge), 라쏘(Lasso) 및 로지스틱 회귀 등의 회귀 알고리즘 제공</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.navie_bayes</span></code>: 나이브 베이즈 알고리즘 제공</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code>: 최근접 이웃 알고리즘 제공</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.svm</span></code>: 서포트 벡터 머신 알고리즘 제공</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code>: 의사 결정 트리 알고리즘 제공</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.cluster</span></code>: 비지도 클러스터링 알고리즘 제공</p></li>
+</ul>
+</li>
+<li><p>유틸리티</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code>: 피처 처리 등의 변환과 머신러닝 알고리즘 학습, 예측 등을 묶어서 실행할 수 있는 유틸리티 제공</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="iris">
 <h2>예제: 붓꽃(iris) 품종 예측하기<a class="headerlink" href="#iris" title="Permalink to this headline">#</a></h2>
 <p>붓꽃 데이터는 1936년 한 영국 통계학자에 의해 선형분류 문제의 예제로 활용되면서 머신러닝의 대표적인 예제로 활용되고 있다.</p>
-<p>붓꽃의 특징(feature)은 꽃받침 길이(sepal length), 꽃받침 폭(sepal width), 꽃잎 길이(petal length), 꽃잎 폭(petal width)으로 나눠지며ㅏ, 얻고자 하는 목표값(label)은 setosa, versicolor, verginica이다.</p>
+<p>붓꽃의 특징(feature)은 꽃받침 길이(sepal length), 꽃받침 폭(sepal width), 꽃잎 길이(petal length), 꽃잎 폭(petal width)으로 나눠지며, 얻고자 하는 목표값(label)은 setosa, versicolor, verginica 품종이다.</p>
 <p>붓꽃 데이터에는 세 품종 각각 50개씩 총 150개의 데이터가 들어있다.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a></p>
-<div align="center"><img src="https://haesunbyun.github.io/common/images/ai7.png"></div><div class="section" id="id1">
-<h3>데이타 확인 및 파악<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div align="center"><img src="https://haesunbyun.github.io/common/images/ai7.png"></div><ul class="simple">
+<li><p>pairplot() 함수를 통해 dataset에 존재하는 모든 변수들 간의 상관관계를 한번에 보여주는 그래프를 그려보자. 각 X변수들 간에 어떤 관계가 있는지 보는 것도 데이터 분석에 큰 도움이 된다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">iris_data</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
+<span class="n">iris_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">iris_data</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/128140dca4d15605c7ba12472cb182718e9bb8bbc6952cb5de33ec5c97fc3dea.png" src="_images/128140dca4d15605c7ba12472cb182718e9bb8bbc6952cb5de33ec5c97fc3dea.png" />
+</div>
+</div>
+<div class="section" id="id7">
+<h3>데이타 확인 및 파악<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>사이킷런 모듈의 이름은 sklearn이며, 붓꽃 데이터는 워낙 유명한 데이터라 sklearn의 datasets에 이미 들어가 있다.</p></li>
-<li><p>먼저 이를 import 시킨다.</p></li>
+<li><p>이 밖에도 아래와 같이 다양한 데이터 셋을 제공하고 있다.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>dataset 이름</p></th>
+<th class="text-left head"><p>데이터 셋에 대한 설명 (적합한 모델)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">load_boston</span></code></p></td>
+<td class="text-left"><p>load and return the boston house-prices dataset (regression).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">load_iris</span></code></p></td>
+<td class="text-left"><p>Load and return the iris dataset (classification).</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">load_diabetes</span></code></p></td>
+<td class="text-left"><p>Load and return the diabetes dataset (regression).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">load_digits</span></code></p></td>
+<td class="text-left"><p>Load and return the digits dataset (classification).</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">load_linnerud</span></code></p></td>
+<td class="text-left"><p>Load and return the linnerud dataset (multivariate regression).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">load_wine</span></code></p></td>
+<td class="text-left"><p>Load and return the wine dataset (classification).</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">load_breast_cancer</span></code></p></td>
+<td class="text-left"><p>Load and return the breast cancer wisconsin dataset (classification).</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>먼저 iris 데이터셋을 import 시킨다.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
 <span class="n">iris</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>iris 데이터는 sklearn.utils.Bunch 타입이다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">b4e493327ea5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">dir</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">2566266</span><span class="n">fcf46</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">type</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;iris&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>데이터를 가져왔다면 전체적인 구성과 구조, 모양을 확인하는 것이 먼저 이루어져야 한다.</p></li>
+<li><p>dir() 함수를 통해 iris 객체가 어떤 변수와 메소드(method)를 가지고 있는지 확인한다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>iris 객체의 변수에 들어있는 데이터들을 확인해본다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">data</span>
@@ -490,10 +751,13 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>배열의 경우 원소의 데이터 타입이 표현된다.</p></li>
+<li><p>dtype은 <a class="reference external" href="https://engineer-mole.tistory.com/85%EC%97%90%EC%84%9C">https://engineer-mole.tistory.com/85에서</a> 참고하기 바란다.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
-<span class="c1">#dtype 참조 : https://engineer-mole.tistory.com/85</span>
 </pre></div>
 </div>
 </div>
@@ -501,19 +765,6 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">iris_data</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
-<span class="n">iris_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">iris_data</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -535,6 +786,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>X_train 데이터와 X_test 데이터의 모양(shape)을 확인해보자.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -542,12 +796,21 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>y_train 데이터와 y_test 데이터의 모양(shape)을 확인해보자.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+<ul class="simple">
+<li><p>데이터 5개만 자세히 확인해보자.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">X_train</span><span class="p">[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -558,23 +821,24 @@ document.write(`
 </div>
 </div>
 <div class="section" id="k-nn">
-<h3>k-NN(최근접 이웃) 예측모델 적용<a class="headerlink" href="#k-nn" title="Permalink to this headline">#</a></h3>
+<h3>k-NN(최근접 이웃) 분류모델<a class="headerlink" href="#k-nn" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>머신러닝 알고리즘으로는 k-NN 알고리즘을 적용해보자.</p></li>
 <li><p>k-NN알고리즘은 거리기반 분류분석 모델이다.</p></li>
 <li><p>거리가 가까운 k개의 다른 데이터의 레이블을 참조하여 유사 속성에 따라 분류하는 알고리즘이다.</p></li>
-<li><p>k-NN을 사용해보는 이유는 붓꽃이 꽃잎의 길이, 너비, 꽃받침의 길이, 너비에 따라 품종이 유사성이 있으므로 이 값들을 기반으로 유사한 너비와 길이를 가진 값들을 동일 품종으로 예측하기 위함이다. 즉 가까운 k개의 너비와 길이를 기반으로 품종을 결정짓고자 한다.</p></li>
-<li><p>거리를 측정할 때 유클리디안 거리 계산법을 사용한다.</p></li>
+<li><p>k-NN을 사용해보는 이유는 붓꽃이 꽃잎의 길이, 꽃잎의 너비, 꽃받침의 길이, 꽃받침의 너비에 따라 품종의 유사성이 있으므로 이 값들을 기반으로 유사한 너비와 길이를 가진 값들을 동일 품종으로 예측하기 위함이다. 즉 가까운 k개의 너비와 길이를 기반으로 품종을 결정짓고자 한다.</p></li>
+<li><p>너비와 길이를 기반으로 서로 간의 거리를 측정할 때 유클리디안 거리 계산법을 사용한다.</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(d(i,j) = \sqrt{(x_j-x_i)^2 + (y_j-y_i)^2}\)</span></p>
 <div align="center"><img src="https://haesunbyun.github.io/common/images/ai8.png" ></div>
 <ul class="simple">
-<li><p>지난 완전실습문제로 나왔던 가장 가까운 이웃찾기가 k-NN알고리즘의 일부를 구현하는 예제이다.</p></li>
-<li><p>간단한 알고리즘이지만 이미지 처리, 영상에서 글자 인식, 얼굴 인식, 선호도 예측, 유전자 패턴 인식 등 많은 분야에서 사용되고 있다.</p></li>
+<li><p>k-NN 알고리즘은 이미지 처리, 영상에서 글자 인식, 얼굴 인식, 선호도 예측, 유전자 패턴 인식 등 많은 분야에서 사용되고 있다.</p></li>
 <li><p>sklearn모듈에서 k-NN 알고리즘은 sklearn.neighbors에 KNeighborsClassifier()로 구현되어 있다.</p></li>
 <li><p>k-NN에서 k값은 옵션 n_neighbors로 설정가능하다. 디폴트는 5이다.</p></li>
 <li><p>여기서는 아주 심플하게 k를 1로 설정한 k-NN 알고리즘으로 모델을 만들어보자.</p></li>
 </ul>
+<div class="section" id="id8">
+<h4>모델 생성<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
@@ -597,7 +861,7 @@ document.write(`
 <ul class="simple">
 <li><p>이제 만들어진 모델에 트레이닝데이터를 입력으로 넣어서 학습하도록 시키자.</p></li>
 <li><p>학습은 fit()함수를 통해서 이루어진다.</p></li>
-<li><p>feature로 X_train과 label(답)로 y_train을 입력으로 줘서 학습시킨다.</p></li>
+<li><p>feature로 X_train을 입력으로 주고, label(답)로 y_train을 입력으로 줘서 학습시킨다.</p></li>
 <li><p>데이터가 150개뿐이라 학습은 금방 끝난다.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -611,7 +875,7 @@ document.write(`
 </div>
 <ul class="simple">
 <li><p>학습이 완료되었으니 샘플 하나를 입력으로 줘서 예측해보도록 하자.</p></li>
-<li><p>이때 샘플이 하나일지라도 2차원 배열로 줘야 한다.</p></li>
+<li><p>예측은 만든 모델객체.predict()로 예측할 수 있다. 이때 샘플이 하나일지라도 2차원 배열로 줘야 한다.</p></li>
 <li><p>임의값 [[6,3,4,1.5]]을 줬더니 array([1])의 값을 반환한다. 즉, ‘versicolor’로 예측한다.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -622,26 +886,24 @@ document.write(`
 </div>
 </div>
 <ul class="simple">
-<li><p>모델이 학습을 잘했는지 테스트셋(X_test)을 입력으로 넣어보자. 이때 모델이 잘 만들어졌는지 평가하기 위해 y_test도 함께 넣어서 평가점수를 획득해보자.</p></li>
-<li><p>만든 모델의 예측 정확도는 0.9736정도로 높은 평가점수가 나온다.</p></li>
-<li><p>이 데이터는 원래 잘 분리된 데이터라 모델 평가 점수가 높게 나온다.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
 <li><p>정답을 제대로 예측했는지 하나 하나 확인해보기 위해 X_test를 predict()에 넣어준 후, 정답인 y_test와 모델이 예측한 y_pred를 확인해보자.</p></li>
-<li><p>딱 하나만 예측이 빗나간것을 확인할 수 있다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">==</span> <span class="n">y_pred</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>모델이 잘 만들어졌는지 평가하기 위해 X_test, y_test를 넣어서 평가점수를 획득해보자.</p></li>
+<li><p>만든 모델의 예측 점수를 확인해보자.(이 데이터는 원래 잘 분리된 데이터라 모델 평가 점수가 높게 나온다.)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -653,37 +915,47 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="problem">
-<h4>Problem: 선형회귀 모델<a class="headerlink" href="#problem" title="Permalink to this headline">#</a></h4>
-<p>지난 수업에서는 분류모델 가운데, k-NN 알고리즘을 적용하여 붓꽃의 종류를 예측하는 모델을 만들어 보았다.</p>
-<p>😄 선형회귀모델을 적용하여 붓꽃 꽃잎의 길이를 예측하시오.</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>선형회귀 모델<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>선형 회귀는 종속 변수 y와 하나 이상의 독립 변수 x와의 선형 상관관계를 모델링하는 기법이다.</p></li>
-<li><p>종속변수: 독립변수의 값에 영향을 받는 변수, 결과가 되는 칼럼</p>
+<li><p>선형회귀는 종속 변수 y와 하나 이상의 독립 변수 x와의 선형 상관관계를 모델링하는 기법이다.</p>
+<ul>
+<li><p>종속변수: 독립변수의 값에 영향을 받는 변수, 결과가 되는 column</p>
 <ul>
 <li><p>‘온도가 30도가 되니 아이스크림 판매량이 500개를 돌파했다.’에서 아이스크림 판매량이 종속변수이다.</p></li>
 </ul>
 </li>
-<li><p>독립변수: 종속변수에 영향을 미치는 변수, 원인이 되는 칼럼</p>
+<li><p>독립변수: 종속변수에 영향을 미치는 변수, 원인이 되는 column</p>
 <ul>
 <li><p>‘온도가 30도가 되니 아이스크림 판매량이 500개를 돌파했다.’에서 온도가 독립변수이다.</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="id2">
-<h5>데이터 확인<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
+</li>
+<li><p>선형회귀는 이와 같이 두 변수의 관계를 알아내거나 이를 이용하여 y가 밝혀지지 않은 x값에 대해 y를 예측하는 데에 사용된다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">mx</span> <span class="o">+</span> <span class="n">b</span>
+<span class="c1"># m은 직선의 기울기(계수)</span>
+<span class="c1"># b는 y절편</span>
+</pre></div>
+</div>
 <ul class="simple">
-<li><p>모듈 seaborn에서 제공하는 iris 데이터셋을 불러와 확인해본다.</p></li>
-<li><p>sns.load_dataset()으로 불러오면 pandas의 DataFrame 구조로 읽어온다.</p></li>
+<li><p>가장 간단한 선형모델은 바로 일차함수이다.</p></li>
+<li><p>m은 기울기로, 입력 변수 x에 곱해지는 계수(Coefficient)이고, b는 절편(intercept)이다.</p></li>
+<li><p>기본적으로 선형회귀 알고리즘은 데이터를 설명하는 가장 적절한 기울기와 절편값을 찾는다.</p></li>
+<li><p>x변수는 데이터의 feature(특징)이라 바꿀 수 없고, 우리는 m과 b를 제어할 수 있다.</p></li>
+<li><p>선형회귀 알고리즘은 기본적으로 데이터 요소에 여러 직선을 갖다 대 보고 가장 작은 오류를 내는 직선을 반환한다.</p></li>
+</ul>
+<ul class="simple">
+<li><p>이번에는 선형회귀모델을 적용하여 붓꽃 꽃잎의 길이를 예측해보자.</p></li>
+<li><p>선형 회귀는 종속 변수 y와 하나 이상의 독립 변수 x가 필요하므로 종속변수와 독립변수를 결정해보자.</p></li>
+<li><p>이번에는 pandas의 데이터프레임에 저장되어 있는 데이터를 붓꽃 데이터를 활용해보자.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">iris_data</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
-<span class="n">iris_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -837,8 +1109,7 @@ document.write(`
   </div>
   </div></div>
 </div>
-<div align="center"><img src="https://haesunbyun.github.io/common/images/ai7.png"></div><ul class="simple">
-<li><p>선형 회귀는 종속 변수 y와 하나 이상의 독립 변수 x가 필요하므로 종속변수와 독립변수를 결정해보자.</p></li>
+<ul class="simple">
 <li><p>columns의 인덱스 0(임의로 선택)을 종속변수로 지정하고, 인덱스 1~3을 독립변수로 지정해보자.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -852,7 +1123,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;] sepal_length
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sepal_length&#39;, &#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;, &#39;species&#39;]
+[&#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;] sepal_length
 </pre></div>
 </div>
 </div>
@@ -900,9 +1172,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id3">
-<h5>모델 생성<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
+<div class="section" id="id10">
+<h4>모델 생성<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>데이터를 분리했으니 선형회귀모델을 생성해보자.</p></li>
 <li><p>선형회귀모델은 sklearn.linear_model의 LinearRegression()을 이용하여 생성할 수 있다.</p></li>
@@ -939,7 +1210,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.61809913,  0.72706308, -0.59775925])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.65115982,  0.72898619, -0.58177506])
 </pre></div>
 </div>
 </div>
@@ -959,21 +1230,20 @@ document.write(`
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>기울기를 a, 절편을 b로 두었을 때 회귀방정식은 aX+b이다.</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.plot(x_cols, y_col)</span>
-
-<span class="n">iris_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span><span class="s1">&#39;petal_length&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span><span class="s1">&#39;petal_length&#39;</span><span class="p">)</span>
+<span class="n">iris_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span><span class="s1">&#39;petal_width&#39;</span><span class="p">)</span>
+<span class="n">iris_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span><span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span><span class="s1">&#39;petal_width&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1c655a2d5c2d1e725b22024c42747dc163f6e4d429d54b41b99d045c37db710a.png" src="_images/1c655a2d5c2d1e725b22024c42747dc163f6e4d429d54b41b99d045c37db710a.png" />
+<img alt="_images/393b3e0fc67f482abe886176fa4f970d509733b186ee43eb68e01659b5a94454.png" src="_images/393b3e0fc67f482abe886176fa4f970d509733b186ee43eb68e01659b5a94454.png" />
+<img alt="_images/63515fcebe4ea73ade35889864bb14c0c7d61cbc7b3692af6c940c3dfa9d5f86.png" src="_images/63515fcebe4ea73ade35889864bb14c0c7d61cbc7b3692af6c940c3dfa9d5f86.png" />
+<img alt="_images/0bae41dd54416bfebb2da2a020881c6f2cd6d832e4ab611698c2781726e54a57.png" src="_images/0bae41dd54416bfebb2da2a020881c6f2cd6d832e4ab611698c2781726e54a57.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1036,10 +1306,10 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="problem-clustering">
-<h4>Problem: 군집(clustering) 모델<a class="headerlink" href="#problem-clustering" title="Permalink to this headline">#</a></h4>
-<p>😄 군집모델 가운데 k-means 알고리즘을 적용하여 붓꽃의 품종을 예측하시오.</p>
+<div class="section" id="clustering">
+<h3>군집(clustering) 모델<a class="headerlink" href="#clustering" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
+<li><p>군집모델 가운데 k-means 알고리즘을 적용하여 붓꽃의 품종을 예측해보자.</p></li>
 <li><p>군집은 비지도 학습에 포함된다.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1335,11 +1605,11 @@ Name: sepal_length, dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>마무리<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id11">
+<h2>마무리<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>머신러닝을 지원하는 모듈인 scikit-learn에 구현되어 있는 지도학습 알고리즘 가운데 하나인 k-NN알고리즘을 이용하여 머신러닝 모델을 만들어보고 붓꽃 데이터의 품종을 예측해보았다.</p></li>
+<li><p>머신러닝을 지원하는 모듈인 scikit-learn에 구현되어 있는 지도학습 알고리즘인 k-NN알고리즘을 이용하여 머신러닝 모델을 만들어보고 붓꽃 데이터의 품종을 분류해보고, 선형회귀 모델로 붓꽃의 sepal_length를 예측해보았다.</p></li>
+<li><p>비지도 학습 알고리즘인 군집(clustering) 모델을 이용하여 품종을 클러스터링 해 보았다.</p></li>
 </ul>
 </div>
 </div>
@@ -1386,7 +1656,7 @@ Name: sepal_length, dtype: int64
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 12. 음성인식</p>
+        <p class="prev-next-title">Chapter 13. 음성인식</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1405,22 +1675,33 @@ Name: sepal_length, dtype: int64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">Scikit-Learn(사이킷 런)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">머신러닝</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickdraw">머신러닝 체험해보기: QuickDraw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">머신러닝 체험해보기: 목소리 흉내</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">머신러닝 용어</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">머신러닝 분류</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">머신러닝을 위한 주요 패키지</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">Scikit-Learn(사이킷 런)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">scikit-learn 주요 모듈</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iris">예제: 붓꽃(iris) 품종 예측하기</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">데이타 확인 및 파악</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">데이타 확인 및 파악</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-set-test-set">train set과 test set으로 분리</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nn">k-NN(최근접 이웃) 예측모델 적용</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem: 선형회귀 모델</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">데이터 확인</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">모델 생성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nn">k-NN(최근접 이웃) 분류모델</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">모델 생성</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-clustering">Problem: 군집(clustering) 모델</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">선형회귀 모델</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">모델 생성</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">군집(clustering) 모델</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">마무리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">마무리</a></li>
 </ul>
   </nav></div>
 
